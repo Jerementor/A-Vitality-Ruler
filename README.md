@@ -7,4 +7,4 @@ Open Source Arcade Shooter Made in Construct 2
 
 # Screenshot
 Template Art: 
-![alt text](https://twitter.com/Jerementor/status/701619197516914688 "Gif")
+![alt text](https://pbs.twimg.com/media/CclGmLXUAAErW_Z.jpg"Gif")
