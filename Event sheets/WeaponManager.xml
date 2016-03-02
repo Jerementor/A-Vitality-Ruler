@@ -1,0 +1,807 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>WeaponManager</name>
+    <events>
+        <event-block sid="414500929147632">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9392665823714102" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="8606375461415662" type="obj_gun_upgrades">
+                    <param id="0" name="Instance variable">gun_id</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6257959109493435">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="9074151599594473" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="7180614752954837" type="obj_gun">
+                    <param id="0" name="X">obj_player.ImagePointX(&quot;Gun&quot;)</param>
+                    <param id="1" name="Y">obj_player.ImagePointY(&quot;Gun&quot;)</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="2455336308352572" type="obj_gun">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="5" name="Set frame" sid="5978403540604818" type="obj_gun">
+                    <param id="0" name="Frame number">Self.gun_id</param>
+                </action>
+                <action id="5" name="Set frame" sid="7899883229073848" type="obj_gun_upgrades">
+                    <param id="0" name="Frame number">Self.gun_id</param>
+                </action>
+                <action id="0" name="Set text" sid="6483527999694462" type="sf_wep_type">
+                    <param id="0" name="Text">obj_gun.wep_type</param>
+                </action>
+                <action id="-3" name="Set position" sid="1333436317426573" type="obj_shield">
+                    <param id="0" name="X">obj_player.ImagePointX(&quot;Shield&quot;)</param>
+                    <param id="1" name="Y">obj_player.ImagePointY(&quot;Shield&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="9764625890800112" title="Screenshake">
+            <sub-events>
+                <event-block any="1" sid="9151135280060968">
+                    <conditions>
+                        <condition id="0" name="On function" sid="163266188879554" type="Function">
+                            <param id="0" name="Name">&quot;screenshake_func&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="9174742681297064" type="obj_window_grid">
+                            <param id="0" name="Magnitude">Function.Param(0)</param>
+                            <param id="1" name="Duration">Function.Param(1)</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7000227152052256" title="Weapon Pressed">
+            <sub-events>
+                <event-block any="1" sid="70311063632177">
+                    <conditions>
+                        <condition id="0" name="On click" sid="4074978344478338" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="839096569321384" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="1384342351277064" type="Function">
+                            <param id="0" name="Name">&quot;wep_type_func&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;pressed&quot;{###}0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="3479549130823015" title="Weapon Down">
+            <sub-events>
+                <event-block any="1" sid="6305454681614473">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="5661714016634865" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                        <condition id="3" name="Is button down" sid="193852125470919" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="2433218419665808" type="Function">
+                            <param id="0" name="Name">&quot;wep_type_func&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;down&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="8749130494743771" title="Weapon Multiple Bullets">
+            <sub-events>
+                <event-block sid="9324372568704329">
+                    <conditions>
+                        <condition id="0" name="On function" sid="3199395515295249" type="Function">
+                            <param id="0" name="Name">&quot;wep_shoot_func&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7993529799598394">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="8208411033254302" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="3199538345050869" type="System">
+                                    <param id="0" name="Object to create">obj_bullet</param>
+                                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                                    <param id="2" name="X">obj_gun.X</param>
+                                    <param id="3" name="Y">obj_gun.Y</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="94274525936881" type="obj_bullet">
+                                    <param id="0" name="Angle">angle(obj_gun.X, obj_gun.Y, Mouse.X(0), Mouse.Y(0))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9651379627658535">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8141861796303753" type="System" />
+                                <condition id="-12" name="Repeat" sid="4391346171823046" type="System">
+                                    <param id="0" name="Count">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="7358755238994891" type="System">
+                                    <param id="0" name="Object to create">obj_bullet</param>
+                                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                                    <param id="2" name="X">obj_gun.X</param>
+                                    <param id="3" name="Y">obj_gun.Y</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="424943798471357" type="obj_bullet">
+                                    <param id="0" name="Angle">angle(obj_gun.X, obj_gun.Y, Mouse.X(0), Mouse.Y(0)) + random(-bullet_spread,bullet_spread)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group bookmark="1" description="" sid="3005364920814113" title="Weapon Type">
+            <sub-events>
+                <event-block sid="6486434037457983">
+                    <conditions>
+                        <condition id="0" name="On function" sid="7492575210384407" type="Function">
+                            <param id="0" name="Name">&quot;wep_type_func&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9780956817787636">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="6697841871081767" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;pressed&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>Magnum</comment>
+                                <event-block any="1" sid="3367739512725304">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5139731014446771" type="obj_gun">
+                                            <param id="0" name="Instance variable">gun_id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="6585615309503316" type="Function">
+                                            <param id="0" name="Name">&quot;screenshake_func&quot;</param>
+                                            <param id="1" name="Parameter {n}">2{###}0.2</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="1501379919615847">
+                                            <conditions>
+                                                <condition id="-12" name="Repeat" sid="7592576999676363" type="System">
+                                                    <param id="0" name="Count">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="4209862935964057" type="obj_gun">
+                                                    <param id="0" name="Object">obj_bullet</param>
+                                                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                                                    <param id="2" name="Image point">&quot;Bullet&quot;</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="2209689982585872" type="obj_gun">
+                                                    <param id="0" name="Object">obj_muzzleflash</param>
+                                                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                                                    <param id="2" name="Image point">&quot;Bullet&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="6013200235060349">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="8626612006232093" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="8689327241742534" type="Audio">
+                                                    <param id="0" name="Audio file">sndRevolver</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Shotgun</comment>
+                                <event-block any="1" sid="4091470171937899">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4944594571423275" type="obj_gun">
+                                            <param id="0" name="Instance variable">gun_id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="2762837372149025" type="Function">
+                                            <param id="0" name="Name">&quot;screenshake_func&quot;</param>
+                                            <param id="1" name="Parameter {n}">2{###}0.2</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="2030007817248135" type="Function">
+                                            <param id="0" name="Name">&quot;wep_shoot_func&quot;</param>
+                                            <param id="1" name="Parameter {n}">2</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="2420257246318771" type="obj_gun">
+                                            <param id="0" name="Object">obj_muzzleflash</param>
+                                            <param id="1" name="Layer">&quot;Player&quot;</param>
+                                            <param id="2" name="Image point">&quot;Bullet&quot;</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="9650940933189833" type="System">
+                                            <param id="0" name="Variable">bullet_spread</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="209183738796098">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="963582903367408" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="2001753776792462" type="Audio">
+                                                    <param id="0" name="Audio file">sndShotgun</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Bazooka</comment>
+                                <event-block any="1" sid="605435136639453">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9018385671187144" type="obj_gun">
+                                            <param id="0" name="Instance variable">gun_id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" sid="340934987655148" type="System">
+                                            <param id="0" name="Group name">&quot;Rocket Trail&quot;</param>
+                                            <param id="1" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="2332852617434624">
+                                            <conditions>
+                                                <condition id="-12" name="Repeat" sid="1855814847431118" type="System">
+                                                    <param id="0" name="Count">1</param>
+                                                </condition>
+                                                <condition id="-6" name="Every X seconds" sid="2267293082567347" type="System">
+                                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="6541119651953505" type="obj_gun">
+                                                    <param id="0" name="Object">obj_rocket</param>
+                                                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                                                    <param id="2" name="Image point">&quot;Bullet&quot;</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="1779425265977739" type="obj_gun">
+                                                    <param id="0" name="Object">obj_muzzleflash</param>
+                                                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                                                    <param id="2" name="Image point">&quot;Bullet&quot;</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="4070532265243941" type="obj_rocket">
+                                                    <param id="0" name="Object">obj_smoke</param>
+                                                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action behavior="Pin" id="0" name="Pin to object" sid="4890830210491879" type="obj_smoke">
+                                                    <param id="0" name="Pin to">obj_rocket</param>
+                                                    <param id="1" name="Mode">0</param>
+                                                </action>
+                                                <action id="-24" name="Move to top" sid="479370195951939" type="obj_smoke" />
+                                                <action id="0" name="Call function" sid="158056211781971" type="Function">
+                                                    <param id="0" name="Name">&quot;screenshake_func&quot;</param>
+                                                    <param id="1" name="Parameter {n}">2{###}0.2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="3515017171194114">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="3852272346918172" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" sid="7977685874814992" type="System">
+                                            <param id="0" name="Group name">&quot;Rocket Trail&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="7259763282549531">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="3209238772563135" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;down&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>AutoMag</comment>
+                                <event-block any="1" sid="2493957640217574">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3273483438580588" type="obj_gun">
+                                            <param id="0" name="Instance variable">gun_id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="3601524111797936" type="Function">
+                                            <param id="0" name="Name">&quot;screenshake_func&quot;</param>
+                                            <param id="1" name="Parameter {n}">2{###}0.1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="2965054891121364" type="obj_gun">
+                                            <param id="0" name="Instance variable">wep_rate</param>
+                                            <param id="1" name="Value">0.2</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="1377596585074074">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="9158610014303205" type="System">
+                                                    <param id="0" name="Interval (seconds)">obj_gun.wep_rate</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="3622931460667599" type="obj_gun">
+                                                    <param id="0" name="Object">obj_muzzleflash</param>
+                                                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                                                    <param id="2" name="Image point">&quot;Bullet&quot;</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="2581457289148542">
+                                                    <conditions>
+                                                        <condition id="-12" name="Repeat" sid="3523148140575949" type="System">
+                                                            <param id="0" name="Count">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Spawn another object" sid="1374775144840642" type="obj_gun">
+                                                            <param id="0" name="Object">obj_bullet</param>
+                                                            <param id="1" name="Layer">&quot;Player&quot;</param>
+                                                            <param id="2" name="Image point">&quot;Bullet&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="1596973454830059">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="9201896219781711" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="8294356394492622" type="Audio">
+                                                            <param id="0" name="Audio file">sndRevolver</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>AutoShotgun</comment>
+                                <event-block any="1" sid="806181552057096">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3799866843598803" type="obj_gun">
+                                            <param id="0" name="Instance variable">gun_id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="425990535361141" type="obj_gun">
+                                            <param id="0" name="Instance variable">wep_rate</param>
+                                            <param id="1" name="Value">0.4</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="1222684932887598" type="System">
+                                            <param id="0" name="Variable">bullet_spread</param>
+                                            <param id="1" name="Value">12</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="4387125053924369">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="6173610394342955" type="System">
+                                                    <param id="0" name="Interval (seconds)">obj_gun.wep_rate</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="1726359003543718" type="Function">
+                                                    <param id="0" name="Name">&quot;screenshake_func&quot;</param>
+                                                    <param id="1" name="Parameter {n}">3{###}0.1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="6584305413558573" type="Function">
+                                                    <param id="0" name="Name">&quot;wep_shoot_func&quot;</param>
+                                                    <param id="1" name="Parameter {n}">4</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="9443773791063566" type="obj_gun">
+                                                    <param id="0" name="Object">obj_muzzleflash</param>
+                                                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                                                    <param id="2" name="Image point">&quot;Bullet&quot;</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="75648347852538">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="6152791716058996" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="3518975529131147" type="Audio">
+                                                            <param id="0" name="Audio file">sndShotgun</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="6902690160361282" title="Bullets Manager">
+            <sub-events>
+                <comment>Randomize a local var to explode on 1, but have it be mostly 0</comment>
+                <event-block sid="3653651412956681">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7328960454776955" type="Bullets">
+                            <param id="0" name="Object">obj_level</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3232242851961977" type="Bullets" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4519589688145473">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="3944530270298281" type="System">
+                                    <param id="0" name="Interval (seconds)">int(random(1,2))</param>
+                                </condition>
+                                <condition id="-3" name="Is on-screen" sid="6019811184795677" type="obj_rocket" />
+                                <condition id="-11" name="For Each" sid="9928287506170879" type="System">
+                                    <param id="0" name="Object">obj_rocket</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="8554192931898169" type="obj_rocket">
+                                    <param id="0" name="Object">obj_explosion</param>
+                                    <param id="1" name="Layer">&quot;Enemies&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="3553079671307639" type="Function">
+                                    <param id="0" name="Name">&quot;screenshake_func&quot;</param>
+                                    <param id="1" name="Parameter {n}">6{###}0.3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="854758000105064">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="9303331336688093" type="System">
+                                    <param id="0" name="Object">obj_bullet</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="0" name="Spawn another object" sid="8298062702011596" type="obj_bullet">
+                                    <param id="0" name="Object">obj_bullet_destroy</param>
+                                    <param id="1" name="Layer">&quot;Enemies&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6286434185600372">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="3047844418749491" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="4898679401277974" type="Audio">
+                                    <param id="0" name="Audio file">sndBulhit</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;game-sfx&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="6521221042640404" title="Weapon Upgrades">
+            <sub-events>
+                <event-block sid="6570027829405921">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="7056651488464675" type="obj_global_manager">
+                            <param id="0" name="Instance variable">upgrades</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="8136381059915039" type="System">
+                            <param id="0" name="Group name">&quot;Gun Upgrades&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9018916771513723" type="obj_gun_upgrades">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4818165703468064">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="7070121189420335" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="3443239409602076" type="System">
+                            <param id="0" name="Group name">&quot;Gun Upgrades&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3968728801061393" type="obj_gun_upgrades">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="631528508772775">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1301256761308947" type="obj_gun">
+                            <param id="0" name="Instance variable">gun_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5138459800176124" type="obj_gun">
+                            <param id="0" name="Instance variable">wep_type</param>
+                            <param id="1" name="Value">&quot;MAGNUM&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2676937986596359">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9796506966027893" type="obj_gun">
+                            <param id="0" name="Instance variable">gun_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="8673754380593375" type="obj_gun">
+                            <param id="0" name="Instance variable">wep_type</param>
+                            <param id="1" name="Value">&quot;AUTOMAG&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2999263956617153">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7759969986325765" type="obj_gun">
+                            <param id="0" name="Instance variable">gun_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="6478096962360957" type="obj_gun">
+                            <param id="0" name="Instance variable">wep_type</param>
+                            <param id="1" name="Value">&quot;BAZOOKA&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="853988583237389">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3862080566255833" type="obj_gun">
+                            <param id="0" name="Instance variable">gun_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="7130582281665352" type="obj_gun">
+                            <param id="0" name="Instance variable">wep_type</param>
+                            <param id="1" name="Value">&quot;SHOTGUN&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7680165892144901">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7766138557467773" type="obj_gun">
+                            <param id="0" name="Instance variable">gun_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="4736360895778009" type="obj_gun">
+                            <param id="0" name="Instance variable">wep_type</param>
+                            <param id="1" name="Value">&quot;AUTOSHOTGUN&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="4542800146599307" title="Gun Upgrades">
+            <sub-events>
+                <event-block any="1" sid="182342045029024">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="9680617978978746" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="9800209481351903" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3832682033705961">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="374012508732842" type="obj_player">
+                                    <param id="0" name="Object">obj_gun_upgrades</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="5318737422208247" type="obj_gun">
+                                    <param id="0" name="Instance variable">gun_id</param>
+                                    <param id="1" name="Value">obj_gun_upgrades.gun_id</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="4629181211709257" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">upgrades</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="6399872101866727">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="8904227045176132" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="4469265456517267" type="Audio">
+                                            <param id="0" name="Audio file">sndBox</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;game-sfx&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="5830817793880783" title="Rocket Trail">
+            <sub-events>
+                <event-block sid="8158946506586965">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="4203056135979369" type="System">
+                            <param id="0" name="Object">obj_rocket</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8791654215691598">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="8213128914018935" type="System">
+                                    <param id="0" name="Interval (seconds)">0.05</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="2053269568976628" type="obj_rocket">
+                                    <param id="0" name="Object">obj_mouse_light</param>
+                                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="6357286532800902" type="obj_rocket">
+                                    <param id="0" name="Object">obj_mouse_light_out</param>
+                                    <param id="1" name="Layer">&quot;Lights&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-25" name="Move to bottom" sid="1951835182297892" type="obj_mouse_light" />
+                                <action id="-3" name="Set position" sid="9255748159664949" type="obj_mouse_light">
+                                    <param id="0" name="X">obj_rocket.X</param>
+                                    <param id="1" name="Y">obj_rocket.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="9618326363781269" type="obj_mouse_light_out">
+                                    <param id="0" name="X">obj_rocket.X</param>
+                                    <param id="1" name="Y">obj_rocket.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="844232942171539">
+            <conditions>
+                <condition id="0" name="On function" sid="1531078938673402" type="Function">
+                    <param id="0" name="Name">&quot;randomize_wep_func&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="7169361112887064" type="obj_gun_upgrades">
+                    <param id="0" name="Instance variable">gun_id</param>
+                    <param id="1" name="Value">choose(1,2,3,4,5)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5549192817178771">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="1672342274770609" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="16991429524215" type="obj_player">
+                    <param id="0" name="Instance variable">player_shield</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2418645493609631">
+            <conditions>
+                <condition id="-22" name="Else" sid="1113578636622637" type="System" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="6447888504822815" type="obj_player">
+                    <param id="0" name="Instance variable">player_shield</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8225175771669877">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="1371949943521807" type="obj_player">
+                    <param id="0" name="Instance variable">player_shield</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="3775891106319476" type="System">
+                    <param id="0" name="Object to create">obj_shield</param>
+                    <param id="1" name="Layer">&quot;Player&quot;</param>
+                    <param id="2" name="X">obj_player.ImagePointX(&quot;Shield&quot;)</param>
+                    <param id="3" name="Y">obj_player.ImagePointY(&quot;Shield&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6859061696163467">
+            <conditions>
+                <condition id="-22" name="Else" sid="2786641995675689" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="1937493119457912" type="obj_shield" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

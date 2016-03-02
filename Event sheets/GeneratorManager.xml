@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GeneratorManager</name>
+    <events>
+        <event-block sid="9197081862335218">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6389453177884016" type="System">
+                    <param id="0" name="Variable">room</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="3059919469852529" type="obj_global_manager">
+                    <param id="0" name="Instance variable">round_start</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="8500382440618483" type="System">
+                    <param id="0" name="Layer">&quot;LowerBackground&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6946060516497074">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="7691226504843689" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8466807112030714" type="System">
+                            <param id="0" name="Variable">LowerFrame</param>
+                            <param id="1" name="Value">int(random(0,33))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1866326886599174" type="System">
+                            <param id="0" name="Variable">SecondFrame</param>
+                            <param id="1" name="Value">int(random(0,39))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3520841290957875" type="System">
+                            <param id="0" name="Variable">ThirdFrame</param>
+                            <param id="1" name="Value">int(random(0,33))</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3697159660191739" type="System">
+                            <param id="0" name="Object to create">obj_background_1</param>
+                            <param id="1" name="Layer">&quot;LowerBackground&quot;</param>
+                            <param id="2" name="X">180</param>
+                            <param id="3" name="Y">90</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1193249979615235" type="System">
+                            <param id="0" name="Object to create">obj_background_3</param>
+                            <param id="1" name="Layer">&quot;LowerBackground&quot;</param>
+                            <param id="2" name="X">180</param>
+                            <param id="3" name="Y">90</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2058143170755687" type="System">
+                            <param id="0" name="Object to create">obj_background_2</param>
+                            <param id="1" name="Layer">&quot;LowerBackground&quot;</param>
+                            <param id="2" name="X">180</param>
+                            <param id="3" name="Y">90</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="6913023100875365" type="obj_background_3">
+                            <param id="0" name="Frame number">SecondFrame</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="9998189656844069" type="obj_background_1">
+                            <param id="0" name="Frame number">LowerFrame</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="1786490729932131" type="obj_background_2">
+                            <param id="0" name="Frame number">ThirdFrame</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8594574475534756">
+            <conditions>
+                <condition id="-22" name="Else" sid="1680734801242232" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="2472437026242399" type="System">
+                    <param id="0" name="Layer">&quot;LowerBackground&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

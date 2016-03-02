@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GlobalsManager</name>
+    <events>
+        <variable constant="0" name="ThirdFrame" sid="6317019387332233" static="0" type="number">0</variable>
+        <variable constant="0" name="SecondFrame" sid="2701223752974544" static="0" type="number">0</variable>
+        <variable constant="0" name="LowerFrame" sid="463295180607483" static="0" type="number">0</variable>
+        <variable constant="0" name="bullet_spread" sid="6792689101397154" static="0" type="number">5</variable>
+        <variable constant="0" name="arena_timer" sid="422358049847389" static="0" type="number">90</variable>
+        <variable constant="0" name="countdown" sid="8754313483209784" static="0" type="number">90</variable>
+        <variable constant="0" name="rounds" sid="7476551579858188" static="0" type="number">1</variable>
+        <variable constant="0" name="room" sid="944022807105151" static="0" type="number">0</variable>
+        <variable constant="0" name="player_control" sid="4901645630566973" static="0" type="number">0</variable>
+        <variable constant="0" name="opt_controls" sid="3158229120356222" static="0" type="number">0</variable>
+    </events>
+</c2eventsheet>

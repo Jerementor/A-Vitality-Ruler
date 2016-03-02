@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PlayerManager</name>
+    <events>
+        <event-block sid="2853200524266061">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9108236941500315" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8926180845772793" type="System">
+                    <param id="0" name="Variable">player_control</param>
+                    <param id="1" name="Value">opt_controls</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8510193046402305">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="1074060474787816" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="7623371065410106" type="obj_player">
+                    <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_player.player_state</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="3839648728413456" title="Player ">
+            <sub-events>
+                <event-group description="" sid="8157112711642192" title="Mouse Manager">
+                    <sub-events>
+                        <event-block sid="5038446763676131">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="3194600674736172" type="obj_player">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">Mouse.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="7217779999861808" type="obj_player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="8" name="Set flipped" sid="6346446727885666" type="obj_gun">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1002631890787462">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="82762212595993" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="3887211084861259" type="obj_player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="8" name="Set flipped" sid="833476783207432" type="obj_gun">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="3769067516120144" title="Player Controls">
+                    <sub-events>
+                        <event-block sid="5391661394632352">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9472246210498504" type="System">
+                                    <param id="0" name="Variable">player_control</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="8327210308023194" type="System">
+                                    <param id="0" name="Group name">&quot;WASD&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="6386228211043309" type="System">
+                                    <param id="0" name="Group name">&quot;Arrow Keys&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="6779073846502211" type="System">
+                                    <param id="0" name="Group name">&quot;Gamepad&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5060188220108696">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7752502747546028" type="System">
+                                    <param id="0" name="Variable">player_control</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="7849983090806796" type="System">
+                                    <param id="0" name="Group name">&quot;Arrow Keys&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="3509996892077947" type="System">
+                                    <param id="0" name="Group name">&quot;WASD&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="7369845194144867" type="System">
+                                    <param id="0" name="Group name">&quot;Gamepad&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="325151002846034">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7566043661966777" type="System">
+                                    <param id="0" name="Variable">player_control</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="5658915365253895" type="System">
+                                    <param id="0" name="Group name">&quot;Gamepad&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="8897089794318396" type="System">
+                                    <param id="0" name="Group name">&quot;Arrow Keys&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="9671295848379113" type="System">
+                                    <param id="0" name="Group name">&quot;WASD&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-group description="" inactive="1" sid="6908005511581618" title="WASD">
+                            <sub-events>
+                                <event-block sid="3742905534161863">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="6024068872914593" type="Keyboard">
+                                            <param id="0" name="Key">87 (W)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="9800037459055938" type="obj_player">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4793940304979815">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="9323187310798708" type="Keyboard">
+                                            <param id="0" name="Key">68 (D)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="2888507686172978">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6893946279241505" type="obj_player">
+                                                    <param id="0" name="Instance variable">player_gravity</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">270</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="4262062449725048" type="obj_player">
+                                                    <param id="0" name="Control">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2384763863381218">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="3397406204685286" type="obj_player">
+                                                    <param id="0" name="Instance variable">player_gravity</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">90</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="3839148110633811" type="obj_player">
+                                                    <param id="0" name="Control">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="5068703429582803">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="5633811922847062" type="Keyboard">
+                                            <param id="0" name="Key">65 (A)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="4345531674557499">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="5131213061324332" type="obj_player">
+                                                    <param id="0" name="Instance variable">player_gravity</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">270</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="2217739291641432" type="obj_player">
+                                                    <param id="0" name="Control">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2978320762053936">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7085455376629472" type="obj_player">
+                                                    <param id="0" name="Instance variable">player_gravity</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">90</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="7696784347381564" type="obj_player">
+                                                    <param id="0" name="Control">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" inactive="1" sid="6078343468418613" title="Arrow Keys">
+                            <sub-events>
+                                <event-block sid="3742905534161863">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="6024068872914593" type="Keyboard">
+                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="618307516931373" type="obj_player">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4793940304979815">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="9323187310798708" type="Keyboard">
+                                            <param id="0" name="Key">39 (Right arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="6496712679804342" type="obj_player">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5068703429582803">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="5633811922847062" type="Keyboard">
+                                            <param id="0" name="Key">37 (Left arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="7802626070721329" type="obj_player">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" inactive="1" sid="7016782421609815" title="Gamepad">
+                            <sub-events>
+                                <event-block sid="3742905534161863">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="1800640356392705" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                        <condition id="5" name="Compare axis" sid="710606700912153" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">Gamepad.Axis(0,0)</param>
+                                        </condition>
+                                        <condition id="5" name="Compare axis" sid="2240999109536764" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">-Gamepad.Axis(0,0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="1080787471576971" type="obj_player">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="8195580604768981" type="obj_player">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4793940304979815">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="6794875330353535" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                        <condition id="5" name="Compare axis" sid="504016545314339" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">-Gamepad.Axis(0,0)</param>
+                                        </condition>
+                                        <condition id="5" name="Compare axis" sid="2091434186286748" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">Gamepad.Axis(0,0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="9305793862685114" type="obj_player">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="3838751723411756" type="obj_player">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="4723778405156414">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="5414218175313518" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Button">0</param>
+                                        </condition>
+                                        <condition id="6" name="On button pressed" sid="8693674293147537" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Button">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="5984880391851333" type="obj_player">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="9841954514692191" title="Player Animations">
+                    <sub-events>
+                        <event-block sid="4236132336624159">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="3660062851994286" type="obj_player" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="4092419089847">
+                                    <conditions>
+                                        <condition behavior="Platform" id="0" name="Is moving" sid="5141272479883052" type="obj_player" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="9916044780582399" type="obj_player">
+                                            <param id="0" name="Instance variable">player_state</param>
+                                            <param id="1" name="Value">&quot;WALK&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="950870093194215">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="931857019180102" type="obj_player" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="5809912350776178" type="obj_player" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="5081868954992325" type="obj_player">
+                                    <param id="0" name="Instance variable">player_state</param>
+                                    <param id="1" name="Value">&quot;IDLE&quot;</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="6961653375834135" type="obj_player">
+                                    <param id="0" name="Max Speed">150</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3762263452794039">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="2174472466890699" type="obj_player" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="7762541508286737" type="obj_player">
+                                    <param id="0" name="Instance variable">player_state</param>
+                                    <param id="1" name="Value">&quot;FALL&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3634702203251412">
+                            <conditions>
+                                <condition behavior="Platform" id="3" name="Is jumping" sid="9663006537390614" type="obj_player" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="9007782276935668" type="obj_player">
+                                    <param id="0" name="Instance variable">player_state</param>
+                                    <param id="1" name="Value">&quot;JUMP&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="77938427828657">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="9660716346627621" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="4289667958246969" type="Audio">
+                                            <param id="0" name="Audio file">sndJump</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;game-sfx&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="782394272866885">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="3840977810305005" type="Keyboard">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="3318229997092496" type="obj_player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="8837558916409021" type="obj_gun">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2718375281260627">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="1966286187711463" type="Keyboard">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="5285596038628066" type="Keyboard">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="7949808027150098" type="Keyboard">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="4303556054686269" type="obj_player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="7945163657069569" type="obj_gun">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4044474758422983">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="1314618475234523" type="Keyboard">
+                                    <param id="0" name="Key">90 (Z)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="784389773050851">
+                                    <conditions>
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="6839832121638902" type="obj_player" />
+                                        <condition behavior="Platform" id="0" name="Is moving" sid="2348799836090832" type="obj_player" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="7343513534877942" type="obj_player">
+                                            <param id="0" name="Max Speed">200</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="1688637236785393" type="obj_player">
+                                            <param id="0" name="Instance variable">player_state</param>
+                                            <param id="1" name="Value">&quot;ROLL&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="7897649211200547" title="Wall Jump">
+                    <sub-events>
+                        <event-block any="1" sid="9600379033039877">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="6160337350794889" type="Keyboard">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                </condition>
+                                <condition id="0" name="On key pressed" sid="5828593433565432" type="Keyboard">
+                                    <param id="0" name="Key">87 (W)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9723099023563503">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="663066243344608" type="obj_player">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="24032290349834" type="obj_player">
+                                            <param id="0" name="Vector X">-500</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="4659686580063102" type="obj_player">
+                                            <param id="0" name="Vector Y">-350</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="5996145097451414" type="obj_player">
+                                            <param id="0" name="Instance variable">player_state</param>
+                                            <param id="1" name="Value">&quot;SLIDE&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3616904715631167">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="323939808226216" type="obj_player">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="4764655684094738" type="obj_player">
+                                            <param id="0" name="Vector X">500</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="4531898692801254" type="obj_player">
+                                            <param id="0" name="Vector Y">-350</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="8819209218130795" type="obj_player">
+                                            <param id="0" name="Instance variable">player_state</param>
+                                            <param id="1" name="Value">&quot;SLIDE&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="5020461819700328" title="Wall Slide">
+                    <sub-events>
+                        <event-block any="1" sid="6482432393685613">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="2166414960418925" type="Keyboard">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="2546985463220412" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="2932923668361572">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="9215906097515361" type="obj_player">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="6200288548151202">
+                                            <conditions>
+                                                <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="7793507027711771" type="obj_player" />
+                                                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="6831810372615006" type="obj_player" />
+                                                <condition id="-1" name="Compare X" sid="6526892868695311" type="obj_player">
+                                                    <param id="0" name="Comparison">2</param>
+                                                    <param id="1" name="X co-ordinate">Mouse.X</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="4084533970677749" type="obj_player">
+                                                    <param id="0" name="Vector Y">50</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="1933021080706009" type="obj_player">
+                                                    <param id="0" name="Instance variable">player_state</param>
+                                                    <param id="1" name="Value">&quot;SLIDE&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="8933524773511281">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="9730223667058441" type="Keyboard">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="4367626876490113" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="8918281912305357">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="7824951871503998" type="obj_player">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="2238895294620921">
+                                            <conditions>
+                                                <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="296348779487926" type="obj_player" />
+                                                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="8778217676479129" type="obj_player" />
+                                                <condition id="-1" name="Compare X" sid="4965989191767412" type="obj_player">
+                                                    <param id="0" name="Comparison">4</param>
+                                                    <param id="1" name="X co-ordinate">Mouse.X</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="1049055725790226" type="obj_player">
+                                                    <param id="0" name="Vector Y">50</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="6170096294199686" type="obj_player">
+                                                    <param id="0" name="Instance variable">player_state</param>
+                                                    <param id="1" name="Value">&quot;SLIDE&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="6733346728641415">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="2224173600744447" type="obj_player" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="580777476297506" type="obj_player">
+                            <param id="0" name="Object">obj_player_dust</param>
+                            <param id="1" name="Layer">&quot;Player&quot;</param>
+                            <param id="2" name="Image point">&quot;Dust&quot;</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="1977306219862423" type="obj_player_dust">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7820176114276261">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="1623495510514152" type="obj_player" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="2791880452761653" type="obj_player">
+                            <param id="0" name="Object">obj_player_dust</param>
+                            <param id="1" name="Layer">&quot;Player&quot;</param>
+                            <param id="2" name="Image point">&quot;Dust&quot;</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="2279504253639066" type="obj_player_dust">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="9298400018505765">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="2479704145159771" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="6658172853392285" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4586212625830518">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="260947237102034" type="obj_player">
+                                    <param id="0" name="Object">JumpThru</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="12" name="Fall through" sid="8842820114962351" type="obj_player" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="2565483224270256" title="Upside Down Gravity">
+            <sub-events>
+                <event-block sid="7068511110025342">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="786660419238525" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4575742067373654">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="317334630501197" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">grav</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="1704472212915978" type="obj_player">
+                                    <param id="0" name="Y">self.Y+2*(windowheight/2-self.Y)</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="6044468083357561" type="obj_player">
+                                    <param id="0" name="Y">self.Y+2*(windowheight/2-self.Y)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="1967067832001294" type="obj_player">
+                                    <param id="0" name="Instance variable">player_gravity</param>
+                                    <param id="1" name="Value">360-self.player_gravity</param>
+                                </action>
+                                <action behavior="Platform" id="10" name="Set angle of gravity" sid="6731715039863402" type="obj_player">
+                                    <param id="0" name="Angle">self.player_gravity</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="4035884466874428" type="obj_player">
+                                    <param id="0" name="Vector X">-obj_player.Platform.VectorX</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="7606730190500946" type="obj_player">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="6231241003899771" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">grav</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9730189343989764">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3695549509958521" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-8" name="Set angle" sid="4546261677889513" type="obj_player">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="2003187535259371" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">grav</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

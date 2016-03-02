@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>DebugManager</name>
+    <events>
+        <event-block sid="4988695172460136">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="2579495619258451" type="Keyboard">
+                    <param id="0" name="Key">49 (1)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8079812491923047" type="System">
+                    <param id="0" name="Variable">room</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1328527803940824">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="339632792594638" type="Keyboard">
+                    <param id="0" name="Key">50 (2)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="951992145745868" type="System">
+                    <param id="0" name="Variable">room</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="2765773484320116">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="2746786472602074" type="Keyboard">
+                    <param id="0" name="Key">80 (P)</param>
+                </condition>
+                <condition id="6" name="On button pressed" sid="7502253081550055" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">9</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6954614052657767">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="8502494686037168" type="obj_global_manager">
+                            <param id="0" name="Instance variable">paused</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="3584332209982057" type="System">
+                            <param id="0" name="Group name">&quot;Options&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="9873277421052189" type="System">
+                            <param id="0" name="Layer">&quot;Options&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="1271114143573443" type="obj_global_manager">
+                            <param id="0" name="Instance variable">paused</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8796893861721951">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5157749324222752" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="5641842677019721" type="System">
+                            <param id="0" name="Group name">&quot;Options&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="1632160105162063" type="System">
+                            <param id="0" name="Layer">&quot;Options&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="7573321189538399" type="obj_global_manager">
+                            <param id="0" name="Instance variable">paused</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4373054852911738">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="3581531990499013" type="Keyboard">
+                    <param id="0" name="Key">51 (3)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="625256548346204">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="8806358897457436" type="obj_player">
+                            <param id="0" name="Instance variable">light_on</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="6055557033059927" type="System">
+                            <param id="0" name="Layer">&quot;Lights&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="8380227838317866" type="obj_player">
+                            <param id="0" name="Instance variable">light_on</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7481827397803034">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6141374947746612" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="1781199775125141" type="System">
+                            <param id="0" name="Layer">&quot;Lights&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="9332166793426766" type="obj_player">
+                            <param id="0" name="Instance variable">light_on</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="9454756032840998">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="9130504220111435" type="Keyboard">
+                    <param id="0" name="Key">52 (4)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Cancel fullscreen" sid="2515233004405847" type="Browser" />
+            </actions>
+        </event-block>
+        <comment bookmark="1">Randomize half platforms based on layers and IDS for invisibility. If id = 1, show up, if 0 then invisible. Randomized per level!</comment>
+        <event-block sid="3580042071811733">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="6195231722341211" type="Keyboard">
+                    <param id="0" name="Key">82 (R)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="8087817879379735" type="obj_global_manager">
+                    <param id="0" name="Instance variable">upgrades</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="4642205242676006" type="obj_global_manager">
+                    <param id="0" name="Instance variable">round_start</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Call function" sid="2795667768795635" type="Function">
+                    <param id="0" name="Name">&quot;randomize_wep_func&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action disabled="1" id="-26" name="Restart layout" sid="9112890192237442" type="System" />
+            </actions>
+        </event-block>
+        <event-group description="" inactive="1" sid="8924968088472841" title="Options">
+            <sub-events>
+                <include>OptionsManager</include>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

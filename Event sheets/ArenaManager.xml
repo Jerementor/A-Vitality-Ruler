@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ArenaManager</name>
+    <events>
+        <include>EnemyManager</include>
+        <include>GeneratorManager</include>
+        <include>PlayerManager</include>
+        <include>WeaponManager</include>
+        <include>SoundManager</include>
+        <include>MusicManager</include>
+        <include>GlobalsManager</include>
+        <include>DebugManager</include>
+        <event-group description="" sid="8415549344623403" title="Game Start">
+            <sub-events>
+                <event-block sid="4616213272907927">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9066932390452245" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3936890979405354" type="System">
+                            <param id="0" name="Variable">room</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="2928895365009937" type="System">
+                            <param id="0" name="Layer">&quot;Options&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="1375619332869748" type="System">
+                            <param id="0" name="Layer">&quot;Enemies&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8744865040807913">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="6120240953890962" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set cursor from sprite" sid="4064200895014517" type="Mouse">
+                            <param id="0" name="Sprite">obj_crosshair</param>
+                        </action>
+                        <action id="16" name="Set title" sid="962176383389612" type="NWjs">
+                            <param id="0" name="Title">projectname &amp; &quot; &quot; &amp; projectversion &amp; &quot; &quot; &amp; LayoutName &amp; &quot; &quot; &amp; room &amp;  &quot; &quot; &amp; objectcount &amp; &quot; ID:&quot;   &amp; obj_gun.gun_id &amp;  &quot; TYPE:&quot; &amp; obj_gun.wep_type</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9153158922416896" type="sf_arena_round">
+                            <param id="0" name="Text">uppercase(&quot;Round &quot;  )&amp; rounds</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4212858455301922" type="obj_timer">
+                            <param id="0" name="Text">int(countdown)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="3332982557331486">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="7649423054103617" type="obj_gun">
+                    <param id="0" name="Instance variable">gun_id</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="8529167605532249" type="System">
+                    <param id="0" name="Layer">&quot;HUD&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1938981218303562">
+            <conditions>
+                <condition id="-22" name="Else" sid="5376123722373921" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="381316562779641" type="System">
+                    <param id="0" name="Layer">&quot;HUD&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="3105670728765321" title="Rooms">
+            <sub-events>
+                <event-block sid="1454291404059574">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3430258533350853" type="System">
+                            <param id="0" name="Variable">room</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="7243346391413569" type="System">
+                            <param id="0" name="Layer">&quot;Lights&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="2231770016062515" type="System">
+                            <param id="0" name="Layer">&quot;HalfPlatforms&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="7313512826450379" type="System">
+                            <param id="0" name="Layer">&quot;Upgrades&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="8300139146538551" type="System">
+                            <param id="0" name="Layer">&quot;Menu&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="7646056452583365" type="System">
+                            <param id="0" name="Layer">&quot;Enemies&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Jumpthru" id="0" name="Set enabled" sid="396479412334107" type="obj_table">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="6192945223243449" type="obj_timer">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="2437916653524349">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="6425633155393072" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="6101514191327605" type="Audio" />
+                                <action id="0" name="Play" sid="8216223101472575" type="Audio">
+                                    <param id="0" name="Audio file">SimOFF_TestTrack</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1451803338978818">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2984424573571726" type="System">
+                            <param id="0" name="Variable">room</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="3980801099402876" type="System">
+                            <param id="0" name="Layer">&quot;Enemies&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="5741175698153584" type="System">
+                            <param id="0" name="Layer">&quot;HUD&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action disabled="1" id="-4" name="Set layer visible" sid="6085249318032118" type="System">
+                            <param id="0" name="Layer">&quot;Lights&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="5879361689286785" type="System">
+                            <param id="0" name="Layer">&quot;Upgrades&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="3515285461481001" type="System">
+                            <param id="0" name="Layer">&quot;Menu&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3302645967415043" type="obj_timer">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Jumpthru" id="0" name="Set enabled" sid="523247557181101" type="obj_table">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="5322589414567589" type="obj_plight">
+                            <param id="0" name="X">obj_player.X</param>
+                            <param id="1" name="Y">obj_player.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3840641622859765">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="4468504685022321" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="1744633470502674" type="Audio" />
+                                <action id="0" name="Play" sid="1946057062514685" type="Audio">
+                                    <param id="0" name="Audio file">SimON_TestTrack</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="4610413094848681" title="Pull Lever">
+            <sub-events>
+                <event-block any="1" sid="6834858815216538">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="3767631694977143" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="620722588571985" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3572726592016956">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="742483391648051" type="obj_player">
+                                    <param id="0" name="Object">obj_lever</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="2755693811690241" type="obj_lever">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="5706624662338348" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action disabled="1" id="-4" name="Set layer visible" sid="4456974360530128" type="System">
+                                    <param id="0" name="Layer">&quot;Lights&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="900023600386866" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">round_start</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="7011934977936127" type="obj_lever">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="4280774516634982" title="Rounds">
+            <sub-events>
+                <event-block sid="7310384959001186">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8924973251771323" type="Function">
+                            <param id="0" name="Name">&quot;next_round_func&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="2598882946816638" type="System">
+                            <param id="0" name="Group name">&quot;Arena Countdown&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="2475596861258643" type="obj_global_manager">
+                            <param id="0" name="Instance variable">round_start</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="7892462868912224" type="obj_global_manager">
+                            <param id="0" name="Instance variable">upgrades</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3613716497231721">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="1216148171292632" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="4355049620564765" type="System">
+                                    <param id="0" name="Variable">rounds</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="3764460581917395" type="Function">
+                                    <param id="0" name="Name">&quot;randomize_wep_func&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9927762864328319" type="System">
+                                    <param id="0" name="Variable">countdown</param>
+                                    <param id="1" name="Value">90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5106206770562153">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="9269954709762184" type="obj_global_manager">
+                            <param id="0" name="Instance variable">round_start</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="4456191106993947" type="System">
+                            <param id="0" name="Group name">&quot;Pull Lever&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7123884441271049" type="System">
+                            <param id="0" name="Variable">room</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-group description="" inactive="1" sid="6569390650433989" title="Arena Countdown">
+                            <sub-events>
+                                <event-block sid="6009572361394644">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="4169712088045118" type="System">
+                                            <param id="0" name="Interval (seconds)">1.0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="1373509178250572" type="System">
+                                            <param id="0" name="Variable">countdown</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="621836051343349">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="2808942029645239" type="obj_global_manager">
+                                            <param id="0" name="Instance variable">enemy_spawn</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="9354668418019658">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="8267388830254735" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="7659800029889858" type="Function">
+                                                    <param id="0" name="Name">&quot;spawn_wave&quot;</param>
+                                                    <param id="1" name="Parameter {n}">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="7746619989681476">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="6916720636386075" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="4379157757713455" type="obj_global_manager">
+                                            <param id="0" name="Instance variable">enemy_spawn</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-block sid="2322455203212439">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="8963318381350523" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="5614187365295932" type="System">
+                                    <param id="0" name="Object to create">sf_arena_round</param>
+                                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                                    <param id="2" name="X">50</param>
+                                    <param id="3" name="Y">45</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="937616463319395">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade-out finished" sid="682506072339854" type="sf_arena_round" />
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="2274943064788854" type="System">
+                                    <param id="0" name="Group name">&quot;Arena Countdown&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5678288838716089">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="643305726542284" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="7984629295812311" type="System">
+                            <param id="0" name="Group name">&quot;Pull Lever&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6566310917174685" type="System">
+                            <param id="0" name="Variable">room</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9287073547062908">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3222836925279103" type="System">
+                            <param id="0" name="Variable">countdown</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="727810036244599" type="Function">
+                            <param id="0" name="Name">&quot;next_round_func&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="6599043280138589" title="Enemy Management">
+                    <sub-events>
+                        <event-block sid="7656135560515191">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5781117209901642" type="System">
+                                    <param id="0" name="Variable">rounds</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="975613536544519">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1290486608887294" type="System">
+                                    <param id="0" name="Variable">rounds</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="4553288912152892">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7507109937284715" type="System">
+                                    <param id="0" name="Variable">rounds</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="3080858962833946">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7968567549353961" type="System">
+                                    <param id="0" name="Variable">rounds</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">11</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="4791677319170169">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1293487713838733" type="System">
+                                    <param id="0" name="Variable">rounds</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2331024720422049" title="Generation">
+            <sub-events>
+                <event-block sid="5416714031518616">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="6540686557534154" type="System">
+                            <param id="0" name="Layer">&quot;HalfPlatforms&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Jumpthru" id="0" name="Set enabled" sid="6340251005891208" type="obj_half_platform">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6093806789840136">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="7674874918676134" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Jumpthru" id="0" name="Set enabled" sid="6948060785254388" type="obj_half_platform">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

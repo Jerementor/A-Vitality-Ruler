@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>OptionsManager</name>
+    <events>
+        <event-block sid="2128558776939332">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="9009284693104472" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">obj_icon_button</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>WASD</comment>
+                <event-block sid="3121105659082286">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1848749075584724" type="obj_icon_button">
+                            <param id="0" name="Instance variable">button_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4707994432531888" type="System">
+                            <param id="0" name="Variable">player_control</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Arrow Keys</comment>
+                <event-block sid="9582578146860583">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2758801203459777" type="obj_icon_button">
+                            <param id="0" name="Instance variable">button_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2793174706922885" type="System">
+                            <param id="0" name="Variable">player_control</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Gamepad</comment>
+                <event-block sid="4591070818431414">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3425824268180186" type="obj_icon_button">
+                            <param id="0" name="Instance variable">button_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4772768069897474" type="System">
+                            <param id="0" name="Variable">player_control</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Mute Music</comment>
+                <event-block sid="592421239342334">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2623824394494853" type="obj_icon_button">
+                            <param id="0" name="Instance variable">button_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="996995354151554">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="7767426518106672" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">mute_sfx</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="9814534528782893" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">mute_music</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="388295587331156">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="7070273667893832" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="5366761013796637" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">mute_music</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Mute SFX</comment>
+                <event-block sid="1236112801528527">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7370650371998468" type="obj_icon_button">
+                            <param id="0" name="Instance variable">button_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="808978313609424">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="1944897997847475" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">mute_sfx</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="7142138174748228" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">mute_sfx</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5952576166136106">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="1048977412491463" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="1304420214144456" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">mute_sfx</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Fullscreen</comment>
+                <event-block sid="6038294535075867">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6119869062219846" type="obj_icon_button">
+                            <param id="0" name="Instance variable">button_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7912154473547549">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="2740587793428102" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">fullscreen</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Cancel fullscreen" sid="9879675133350066" type="Browser" />
+                                <action id="-13" name="Set boolean" sid="2042416773675149" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">fullscreen</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5363217350372176">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6896430316792335" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="10" name="Request fullscreen" sid="1607752145341223" type="Browser">
+                                    <param id="0" name="Mode">5</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8977014261192265" type="obj_global_manager">
+                                    <param id="0" name="Instance variable">fullscreen</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="977475722851184">
+            <conditions>
+                <condition id="-11" name="For Each" sid="3038506680122455" type="System">
+                    <param id="0" name="Object">obj_icon_button</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7094263842141236">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="9604742726094086" type="Mouse">
+                            <param id="0" name="Object">obj_icon_button</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="9512954050289048" type="obj_icon_button">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3176145927073416">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="630667665239269" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="8833097310869186" type="obj_icon_button">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

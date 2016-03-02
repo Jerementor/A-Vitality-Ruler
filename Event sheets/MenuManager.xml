@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MenuManager</name>
+    <events>
+        <event-block sid="2604501757183151">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="420212098388471" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="2110995855349119" type="System">
+                    <param id="0" name="Variable">room</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="4901047508355396" title="Lever">
+            <sub-events>
+                <event-block any="1" sid="6834858815216538">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="3767631694977143" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="620722588571985" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3572726592016956">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="742483391648051" type="obj_player">
+                                    <param id="0" name="Object">obj_lever</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="2755693811690241" type="obj_lever">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="5706624662338348" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="4005052597721713" type="obj_player">
+                                    <param id="0" name="X">220</param>
+                                    <param id="1" name="Y">200</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="7030389849361029" type="System">
+                                    <param id="0" name="Layout">Arena</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="4456974360530128" type="System">
+                                    <param id="0" name="Layer">&quot;Lights&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="1297025903055164">
+            <conditions />
+            <actions>
+                <action disabled="1" id="5" name="Set frame" sid="9117853812582508" type="obj_plight">
+                    <param id="0" name="Frame number">choose(0,0,0,1,1,1,1,0,0,0,0,1)</param>
+                </action>
+                <action disabled="1" id="-16" name="Set opacity" sid="6143057417187099" type="obj_plight">
+                    <param id="0" name="Opacity">choose(50,50,50,50,100,75,75,75,75,25)</param>
+                </action>
+                <action disabled="1" id="-7" name="Set size" sid="8585773603112838" type="obj_plight">
+                    <param id="0" name="Width">choose(50,50,50,50,100,75,75,75,75,25)</param>
+                    <param id="1" name="Height">choose(50,50,50,50,100,75,75,75,75,25)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="4286098356304926">
+                    <conditions />
+                    <actions>
+                        <action disabled="1" id="-3" name="Set position" sid="9007047781480635" type="obj_los">
+                            <param id="0" name="X">obj_gun.ImagePointX(&quot;Bullet&quot;)</param>
+                            <param id="1" name="Y">obj_gun.ImagePointY(&quot;Bullet&quot;)</param>
+                        </action>
+                        <action disabled="1" id="-8" name="Set angle" sid="1996939154362441" type="obj_los">
+                            <param id="0" name="Angle">angle(obj_gun.X, obj_gun.Y, Mouse.X(0), Mouse.Y(0))</param>
+                        </action>
+                        <action disabled="1" id="-5" name="Set width" sid="6124192858831328" type="obj_los">
+                            <param id="0" name="Width">Mouse.Y</param>
+                        </action>
+                        <action disabled="1" id="-6" name="Set height" sid="9773521348504985" type="obj_los">
+                            <param id="0" name="Height">Mouse.Y / Mouse.X</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

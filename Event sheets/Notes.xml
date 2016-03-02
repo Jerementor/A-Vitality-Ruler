@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Notes</name>
+    <events>
+        <comment bookmark="1">Flash bang that lights up for duration</comment>
+        <comment>Jungle Vine Parallax</comment>
+        <comment>Disable entering without a weapon</comment>
+        <event-block sid="1330167927148997">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="959528289741906" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>

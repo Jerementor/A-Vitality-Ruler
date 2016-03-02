@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EnemyManager</name>
+    <events>
+        <event-block sid="4843199290843538">
+            <conditions>
+                <condition id="0" name="On function" sid="4071682744375477" type="Function">
+                    <param id="0" name="Name">&quot;spawn_wave&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7231021138046451">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="6042706029543171" type="System">
+                            <param id="0" name="Count">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9704830282511063" type="System">
+                            <param id="0" name="Object to create">obj_player_dust</param>
+                            <param id="1" name="Layer">&quot;Enemies&quot;</param>
+                            <param id="2" name="X">obj_enemy.X</param>
+                            <param id="3" name="Y">obj_enemy.Y</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="9824131725209812" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4291919782071143" type="System">
+                            <param id="0" name="Object to create">obj_enemy</param>
+                            <param id="1" name="Layer">&quot;Enemies&quot;</param>
+                            <param id="2" name="X">int(random(200,465))</param>
+                            <param id="3" name="Y">int(random(160,200))</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7418137894231389" type="System">
+                            <param id="0" name="Object to create">obj_bat</param>
+                            <param id="1" name="Layer">&quot;Enemies&quot;</param>
+                            <param id="2" name="X">int(random(200,465))</param>
+                            <param id="3" name="Y">int(random(160,200))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8568575310674287">
+            <conditions>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="2812420392997473" type="System">
+                    <param id="0" name="Layer">&quot;Enemies&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4520733524084958">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="839444393280876" type="System">
+                            <param id="0" name="Object">Enemies</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5360573170339081" type="Enemies" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3821560806933926">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1247922236844445" type="Bullets">
+                    <param id="0" name="Object">Enemies</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3960069277113785" type="Bullets" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

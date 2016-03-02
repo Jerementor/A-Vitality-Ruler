@@ -1,0 +1,1064 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>A Vitality Ruler</name>
+    <description>Open Sourced Arena Shooter</description>
+    <version>0.0.1</version>
+    <author>Jeremy Alexander</author>
+    <author-email>jerementor@gmail.com</author-email>
+    <author-website>https://www.ifelselearn.com</author-website>
+    <app-id>com.ifelselearn.main</app-id>
+    <unique-id>2qpiupr2gjili</unique-id>
+    <saved-with-version>22100</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Scirra" id="grayscale">Grayscale</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>320</width>
+        <height>180</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox integer scale</prop>
+        <prop name="Fullscreen scaling">Low quality</prop>
+        <prop name="Fullscreen scaling quality">Low</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Preview browser">NW.js</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use iOS retina display">All devices</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Plugins">
+            <object-type name="Audio" sid="2722091819329769">
+                <plugin id="Audio" />
+            </object-type>
+            <object-type name="Browser" sid="3498868852026895">
+                <plugin id="Browser" />
+            </object-type>
+            <object-type name="Gamepad" sid="996683554706134">
+                <plugin id="gamepad" />
+            </object-type>
+            <object-type name="Keyboard" sid="4436305314906168">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="Mouse" sid="3506161195311074">
+                <plugin id="Mouse" />
+            </object-type>
+            <object-type name="NWjs" sid="2487245206168615">
+                <plugin id="NodeWebkit" />
+            </object-type>
+            <object-type name="Touch" sid="2463496682349194">
+                <plugin id="Touch" />
+            </object-type>
+            <object-type name="WebStorage" sid="1510269620771624">
+                <plugin id="WebStorage" />
+            </object-type>
+            <object-type name="Function" sid="7133424413313279">
+                <plugin id="Function" />
+            </object-type>
+            <object-type name="LocalStorage" sid="5292615482713497">
+                <plugin id="LocalStorage" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Global">
+            <object-type name="obj_background" sid="9300131576475534">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="obj_door" sid="8009297051219847">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="door_id" sid="9766271555738606" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="407804280231452" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_level" sid="9923113524335346">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="8554290966170454">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\JeremyA\Desktop\PNGs\tile-map\tilemap.png" />
+                <tiles />
+            </object-type>
+        </object-folder>
+        <object-folder name="Game">
+            <object-type name="obj_window_grid" sid="2696676057826182">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="ScrollTo" sid="4636278167263007">
+                        <behavior id="scrollto" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9487729313522231" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_plight" sid="300286833444867">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5121280197259603" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Entities">
+            <object-type name="obj_player" sid="958358713722146">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="player_state" sid="2095024413827434" type="string" />
+                    <instance-variable name="light_on" sid="297325208421885" type="boolean" />
+                    <instance-variable name="player_gravity" sid="6776627698593499" type="number" />
+                    <instance-variable name="player_shield" sid="407578530754233" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Platform" sid="3053725945238399">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="6" loop="1" name="ID_IDLE" pingpong="0" repeatcount="1" repeatto="0" sid="1501542665413862" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Player1_Animation 1_0.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Player1_Animation 1_1.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Player1_Animation 1_2.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Player1_Animation 1_3.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Player1_Animation 1_4.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Player1_Animation 1_5.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ID_JUMP" pingpong="0" repeatcount="1" repeatto="0" sid="614656406186617" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\PlayerJump.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ID_SLIDE" pingpong="0" repeatcount="1" repeatto="0" sid="314175544323121" speed="5">
+                        <frame duration="1" hotspotX="0.583333" hotspotY="0.526316" original-source="C:\Users\JeremyA\Desktop\PlayerSlide.png">
+                            <image-point name="Gun" x="0.5" y="0.684211" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0526316" />
+                            <collision-poly>
+                                <point x="0.916667" y="1" />
+                                <point x="0.0833333" y="1" />
+                                <point x="0.0833333" y="0" />
+                                <point x="0.916667" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ID_FALL" pingpong="0" repeatcount="1" repeatto="0" sid="4470312339951686" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\PlayerFall.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="ID_WALK" pingpong="0" repeatcount="1" repeatto="0" sid="9624111223688024" speed="20">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\WalkCycle_Walk_0.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\WalkCycle_Walk_1.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\WalkCycle_Walk_2.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\WalkCycle_Walk_3.png">
+                            <image-point name="Gun" x="0.5" y="0.666667" />
+                            <image-point name="Dust" x="0.5" y="1" />
+                            <image-point name="Shield" x="0.5" y="-0.0555556" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_gun" sid="1077565996964416">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="gun_id" sid="8746897423624586" type="number" />
+                    <instance-variable name="wep_type" sid="5602554752949464" type="string" />
+                    <instance-variable name="wep_rate" sid="2900503262401462" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="GUNS" pingpong="0" repeatcount="1" repeatto="0" sid="210646608545175" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0.6" />
+                        <frame duration="1" hotspotX="0" hotspotY="0.5">
+                            <image-point name="Bullet" x="1.1" y="0.3" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0.5">
+                            <image-point name="Bullet" x="1.08333" y="0.3" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0.5">
+                            <image-point name="Bullet" x="1.08333" y="0.3" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0.5">
+                            <image-point name="Bullet" x="1.08333" y="0.3" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0.5">
+                            <image-point name="Bullet" x="1.08333" y="0.3" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_mech" sid="2873420498381227">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="direction" sid="5821550381702667" type="string" />
+                    <instance-variable name="mech_health" sid="6500236223902528" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Platform" sid="7911430598258397">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                    <behavior-type name="LineOfSight" sid="4576512858221161">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="9106053562613314">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="4" loop="1" name="IDLE" pingpong="0" repeatcount="1" repeatto="0" sid="2871186435260318" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="6" loop="0" name="WALK" pingpong="0" repeatcount="1" repeatto="0" sid="5869578225442401" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="2" loop="0" name="ATTACK" pingpong="0" repeatcount="1" repeatto="0" sid="4378269294272854" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="DEATH" pingpong="0" repeatcount="1" repeatto="0" sid="7779418087574785" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_gun_upgrades" sid="405610040233747">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="gun_id" sid="9740675913590022" type="number" />
+                    <instance-variable name="wep_type" sid="2242267465563771" type="string" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="DestroyOutsideLayout" sid="9362731781194017">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                    <behavior-type name="VerticalMovement" sid="8040757450336171">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="GUNS" pingpong="0" repeatcount="1" repeatto="0" sid="7634584079350565" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0" hotspotY="0.5">
+                            <image-point name="Bullet" x="1" y="0.3" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0.5">
+                            <image-point name="Bullet" x="1" y="0.3" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Upgrade">
+            <object-type name="obj_table" sid="3728036955706816">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Jumpthru" sid="5742603704448851">
+                        <behavior id="jumpthru" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1234973464100461" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Menu">
+            <object-type name="obj_logo" sid="7378383259036116">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="9998679686744712">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2929331540566552" speed="5">
+                        <frame duration="1" hotspotX="0.50641" hotspotY="0" original-source="C:\Users\JeremyA\Desktop\Logo.png">
+                            <collision-poly>
+                                <point x="0.0939597" y="0.0125" />
+                                <point x="0.489933" y="0.475" />
+                                <point x="0.637584" y="0.475" />
+                                <point x="0.295302" y="0.375" />
+                                <point x="0.832215" y="0.6375" />
+                                <point x="0.489933" y="0.625" />
+                                <point x="0.0939597" y="0.7375" />
+                                <point x="0.0201342" y="0.375" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="obj_bullet" sid="1184163238894041">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="4156659636955907">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="6807758632713111">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1475787097902269" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="0" name="Destroy" pingpong="0" repeatcount="1" repeatto="0" sid="752772906620317" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_muzzleflash" sid="8569710708324142">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="8882736244938613">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="5576018344511367">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8765505107517817" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_lever" sid="9475350958456634">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8794128348380404" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_player_health" sid="4064978008320739">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="player_health" sid="893269008111528" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7719183133178335" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="7643092419092505">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2463812602601154" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_menu_window" sid="6413075184648641">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Anchor" sid="5249207380398072">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2866504919585995" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_tooltip.png">
+                        <collision-poly>
+                            <point x="0.09375" y="0.09375" />
+                            <point x="0.5" y="0.078125" />
+                            <point x="0.90625" y="0.09375" />
+                            <point x="0.921875" y="0.5" />
+                            <point x="0.90625" y="0.90625" />
+                            <point x="0.5" y="0.921875" />
+                            <point x="0.09375" y="0.90625" />
+                            <point x="0.078125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="sf_options" sid="2815641469244766">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="obj_button" sid="3325169832258051">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="menu_id" sid="5406100830363595" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1269199526201946" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_levelselect.png">
+                        <collision-poly>
+                            <point x="0.02" y="0.136364" />
+                            <point x="0.5" y="0.0454545" />
+                            <point x="0.98" y="0.136364" />
+                            <point x="0.98" y="0.5" />
+                            <point x="0.96" y="0.818182" />
+                            <point x="0.04" y="0.818182" />
+                            <point x="0.02" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_icon_button" sid="315059432031063">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="button_id" sid="4229049725750125" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5648870468847978" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\button.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\button_hover.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\button_pressed.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_crosshair" sid="1600826493060097">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7865878380486858" speed="0">
+                    <frame duration="1" hotspotX="0.571429" hotspotY="0.619048" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\c_round.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\c_curvedot.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\c_rounddot.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\c_squaredot.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_bullet_destroy" sid="5712848371305282">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="8879060073406408">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="378365613467058">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3460053104443728" speed="5">
+                    <frame duration="1" hotspotX="-1.125" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="-1.125" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="-1.42857" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="-3.25" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="-1.25" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_icons" sid="8674756583964213">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3497456950418329" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.538462" original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_d_up.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.4375" original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_gamepad.png" />
+                    <frame duration="1" hotspotX="0.470588" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_music.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_sound.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\m_fullscreen.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.529412" original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_x_basic_red.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="obj_global_manager" sid="8039785171832595">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="mute_music" sid="5688321058946123" type="boolean" />
+                <instance-variable name="mute_sfx" sid="4781030924088797" type="boolean" />
+                <instance-variable name="fullscreen" sid="12650238978327" type="boolean" />
+                <instance-variable name="round_start" sid="2178035008727085" type="boolean" />
+                <instance-variable name="upgrades" sid="9203335954096899" type="boolean" />
+                <instance-variable name="paused" sid="1478635285199595" type="boolean" />
+                <instance-variable name="grav" sid="5835073332017122" type="boolean" />
+                <instance-variable name="enemy_spawn" sid="9174879678166305" type="boolean" />
+            </instance-variables>
+            <texture original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_question.png" />
+        </object-type>
+        <object-type name="obj_mouse_light" sid="2265748123852544">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Rotate" sid="7733488604419602">
+                    <behavior id="Rotate" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="7242110958694186">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5916564940427814" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_mouse_light_out" sid="3965969901181365">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="9993149960134164">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="7622153707109423">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1336337787638507" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_rocket" sid="5917600125070125">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="7536488516263203">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="2213931416450284">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2115258694375463" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_explosion" sid="4321888606313211">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="7759786382559802">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="601815370704896">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1356972303335677" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.53125" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_enemy" sid="8714303251455412">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="target" sid="6536221148617818" type="boolean" />
+                <instance-variable name="health" sid="469336148508482" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Platform" sid="7358205663729949">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="7273084278292148">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2275020409221144" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_half_platform" sid="2137951082750032">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="facing" sid="6421053602303168" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="3392928626961618">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2751909497262392" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.538462" original-source="C:\Users\JeremyA\Desktop\PNGs\Objects\Platforms\platform.png">
+                        <collision-poly>
+                            <point x="0.0384615" y="0.0769231" />
+                            <point x="0.961538" y="0.0769231" />
+                            <point x="0.269231" y="0.461538" />
+                            <point x="0.653846" y="0.307692" />
+                            <point x="0.5" y="0.307692" />
+                            <point x="0.0384615" y="0.923077" />
+                            <point x="0.153846" y="0.461538" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.538462" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_player_dust" sid="5878210105978448">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="sf_wep_type" sid="6987060496360713">
+            <plugin id="Spritefont2" />
+            <texture original-source="C:\Users\JeremyA\Desktop\AuxoChrome_Game\Textures\d_wep.png" />
+        </object-type>
+        <object-type name="sf_wep_type2" sid="6086285892525686">
+            <plugin id="Spritefont2" />
+            <texture original-source="C:\Users\JeremyA\Desktop\AuxoChrome_Game\Textures\d_wep.png" />
+        </object-type>
+        <object-type name="obj_timer" sid="9267632347257968">
+            <plugin id="Spritefont2" />
+            <texture original-source="C:\Users\JeremyA\Desktop\AuxoChrome_Game\Textures\d_wep.png" />
+        </object-type>
+        <object-type name="obj_smoke" sid="471181560589022">
+            <plugin id="Particles" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="10047185020318">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="759123741480563">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="4042087361680692">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\JeremyA\Desktop\All Files\LevelOfRage\sprSmoke.png" />
+        </object-type>
+        <object-type name="sf_arena_round" sid="6979483049762386">
+            <plugin id="Spritefont2" />
+            <instance-variables>
+                <instance-variable name="round" sid="2157153685928752" type="number" />
+                <instance-variable name="visiblity" sid="7824495055410834" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Fade" sid="4783156442695148">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\JeremyA\Desktop\AuxoChrome_Game\Textures\d_wep.png" />
+        </object-type>
+        <object-type name="obj_fade" sid="9666998348661936">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Fade" sid="8244415184547575">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="obj_los" sid="956818233339719">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2870184693748574" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_intro" sid="2940587512540144">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="intro_id" sid="451932445522912" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Fade" sid="598976999839758">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="TiledBackground" sid="6463450803647135">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\JeremyA\Desktop\Jerementor_Logo.png" />
+        </object-type>
+        <object-type name="obj_background_1" sid="1125631404643016">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="4291410041096931">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="2535689960158217">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="32" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2248599717554775" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\1.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\4.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\8.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\11.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\14.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\18.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\21.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\24.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\27.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\30.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\33.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\35.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\37.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\40.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\44.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\47.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\50.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\53.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\55.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\58.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\61.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\64.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\66.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\68.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\71.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\74.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\83.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\89.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\92.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\95.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\98.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\101.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_background_3" sid="5116055109148974">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="2974060385206291">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="1545165485236894">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="39" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3955888751894525" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\2.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\3.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\5.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\6.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\9.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\10.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\12.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\15.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\16.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\19.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\22.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\23.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\28.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\34.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\36.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\38.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\39.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\41.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\45.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\48.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\51.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\56.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\59.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\62.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\65.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\69.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\72.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\75.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\78.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\80.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\81.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\84.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\86.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\88.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\90.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\93.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\96.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\102.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\104.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_background_2" sid="3276447501274097">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="2321654265741828">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="CustomMovement" sid="7737123548094254">
+                    <behavior id="custom" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="33" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8413055410501439" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\7.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\13.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\17.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\20.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\25.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\26.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\29.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\31.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\32.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\42.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\43.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\46.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\49.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\52.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\54.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\57.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\60.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\63.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\67.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\70.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\73.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\76.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\79.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\82.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\85.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\87.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\91.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\94.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\97.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\99.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\100.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\103.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Portible_OS\Desktop\Vault\SuperPowers Engine\Super Powers Assets\backgrounds-1\layers\105.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SpriteFont" sid="8973382250042516">
+            <plugin id="Spritefont2" />
+            <texture original-source="C:\Users\JeremyA\Desktop\FontSheets\Font05_70_Normal_sheet_red.png" />
+        </object-type>
+        <object-type name="obj_bat" sid="9473191610847478">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="1" name="ID_FLAP" pingpong="0" repeatcount="1" repeatto="0" sid="4235466955747326" speed="8">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\flap1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\flap2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\flap3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\flap4.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_shield" sid="9580382463317571">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5110391128990452" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="Bullets" plugin-id="Sprite" sid="903008124839376">
+            <members>
+                <member>obj_bullet</member>
+                <member>obj_rocket</member>
+            </members>
+        </family>
+        <family name="JumpThru" plugin-id="Sprite" sid="9953638713933653">
+            <members>
+                <member>obj_half_platform</member>
+                <member>obj_table</member>
+            </members>
+        </family>
+        <family name="Enemies" plugin-id="Sprite" sid="7929531392817123">
+            <members>
+                <member>obj_bat</member>
+                <member>obj_enemy</member>
+                <member>obj_mech</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Arena.xml</layout>
+        <layout>Intro.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-folder name="Game">
+            <event-sheet>OptionsManager.xml</event-sheet>
+            <event-sheet>ArenaManager.xml</event-sheet>
+            <event-sheet>MenuManager.xml</event-sheet>
+        </event-folder>
+        <event-folder name="Levels">
+            <event-sheet>GlobalsManager.xml</event-sheet>
+            <event-sheet>MusicManager.xml</event-sheet>
+            <event-sheet>PlayerManager.xml</event-sheet>
+            <event-sheet>SoundManager.xml</event-sheet>
+            <event-sheet>WeaponManager.xml</event-sheet>
+            <event-sheet>DebugManager.xml</event-sheet>
+            <event-sheet>Notes.xml</event-sheet>
+            <event-sheet>GeneratorManager.xml</event-sheet>
+            <event-sheet>EnemyManager.xml</event-sheet>
+        </event-folder>
+        <event-sheet>IntroManager.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="WebStorage" uid="1" />
+        <global-instance type="Gamepad" uid="2">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="3" />
+        <global-instance type="Mouse" uid="4" />
+        <global-instance type="Touch" uid="5">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Audio" uid="6">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Browser" uid="7" />
+        <global-instance type="NWjs" uid="14" />
+        <global-instance type="LocalStorage" uid="33" />
+        <global-instance type="Function" uid="8" />
+    </global-instances>
+    <sounds-folder>
+        <file name="sndJump.m4a" />
+        <file name="sndJump.ogg" />
+        <file name="sndRevolver.m4a" />
+        <file name="sndRevolver.ogg" />
+        <file name="sndShotgun.m4a" />
+        <file name="sndShotgun.ogg" />
+        <file name="sndShotReload.m4a" />
+        <file name="sndShotReload.ogg" />
+        <file name="sndBox.m4a" />
+        <file name="sndBox.ogg" />
+        <file name="sndBulhit.m4a" />
+        <file name="sndBulhit.ogg" />
+        <file name="sndExplode.m4a" />
+        <file name="sndExplode.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="SimOFF_TestTrack.m4a" />
+        <file name="SimOFF_TestTrack.ogg" />
+        <file name="SimON_TestTrack.m4a" />
+        <file name="SimON_TestTrack.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
