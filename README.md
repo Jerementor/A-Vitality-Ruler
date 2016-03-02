@@ -5,6 +5,3 @@ Open Source Arcade Shooter Made in Construct 2
 * Website: https://www.ifelselearn.com
 * Twitter: @jerementor
 
-# Screenshot
-Template Art: 
-![alt text](https://pbs.twimg.com/media/CclGmLXUAAErW_Z.jpg"Gif")
