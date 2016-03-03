@@ -821,6 +821,10 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="obj_menu_sf" sid="8143584102969971">
+                <plugin id="Spritefont2" />
+                <texture />
+            </object-type>
         </object-folder>
         <object-folder name="Arena">
             <object-type name="obj_background_1" sid="1125631404643016">
@@ -1009,10 +1013,6 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-type name="SpriteFont2" sid="8143584102969971">
-            <plugin id="Spritefont2" />
-            <texture />
-        </object-type>
     </object-folder>
     <families>
         <family name="Bullets" plugin-id="Sprite" sid="903008124839376">

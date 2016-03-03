@@ -269,7 +269,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="SpriteFont2" uid="61">
+                <instance type="obj_menu_sf" uid="61">
                     <properties>
                         <character-width>16</character-width>
                         <character-height>16</character-height>
