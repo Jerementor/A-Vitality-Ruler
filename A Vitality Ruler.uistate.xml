@@ -10,16 +10,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Arena</layout>
-        <layout order="9">Intro</layout>
-        <event-sheet order="1">ArenaManager</event-sheet>
-        <event-sheet order="2">OptionsManager</event-sheet>
-        <event-sheet order="3">WeaponManager</event-sheet>
-        <event-sheet order="4">PlayerManager</event-sheet>
-        <event-sheet order="5">DebugManager</event-sheet>
-        <event-sheet order="6">IntroManager</event-sheet>
-        <event-sheet order="7">GeneratorManager</event-sheet>
-        <event-sheet order="8">EnemyManager</event-sheet>
+        <layout order="0">Arena</layout>
+        <event-sheet active="1" order="1">OptionsManager</event-sheet>
+        <event-sheet order="2">SoundManager</event-sheet>
+        <event-sheet order="3">ArenaManager</event-sheet>
+        <event-sheet order="4">DebugManager</event-sheet>
+        <event-sheet order="5">WeaponManager</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -37,48 +33,53 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="0" path="object-folder/Plugins/" />
         <folder expanded="0" path="object-folder/Global/" />
         <folder expanded="0" path="object-folder/Game/" />
-        <folder expanded="0" path="object-folder/Entities/" />
+        <folder expanded="1" path="object-folder/Entities/" />
+        <folder expanded="1" path="object-folder/Entities/Weapons/Bullets/FX/" />
+        <folder expanded="1" path="object-folder/Entities/Player/" />
+        <folder expanded="1" path="object-folder/Entities/Enemies/" />
         <folder expanded="0" path="object-folder/Upgrade/" />
         <folder expanded="0" path="object-folder/Menu/" />
+        <folder expanded="0" path="object-folder/Arena/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="event-folder/Game/" />
         <folder expanded="1" path="event-folder/Levels/" />
         <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
-        <folder expanded="0" path="music-folder/" />
+        <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="0" path="sound-folder/Weapons/" />
         <folder expanded="1" path="animation-folder/obj_door/" />
         <folder expanded="1" path="animation-folder/obj_window_grid/" />
         <folder expanded="1" path="animation-folder/obj_plight/" />
-        <folder expanded="1" path="animation-folder/obj_player/" />
         <folder expanded="1" path="animation-folder/obj_gun/" />
-        <folder expanded="1" path="animation-folder/obj_mech/" />
         <folder expanded="1" path="animation-folder/obj_gun_upgrades/" />
-        <folder expanded="1" path="animation-folder/obj_table/" />
-        <folder expanded="1" path="animation-folder/obj_logo/" />
         <folder expanded="1" path="animation-folder/obj_bullet/" />
-        <folder expanded="1" path="animation-folder/obj_muzzleflash/" />
-        <folder expanded="1" path="animation-folder/obj_lever/" />
-        <folder expanded="1" path="animation-folder/obj_player_health/" />
-        <folder expanded="1" path="animation-folder/Sprite/" />
-        <folder expanded="1" path="animation-folder/obj_menu_window/" />
-        <folder expanded="1" path="animation-folder/obj_button/" />
-        <folder expanded="1" path="animation-folder/obj_icon_button/" />
-        <folder expanded="1" path="animation-folder/obj_crosshair/" />
         <folder expanded="1" path="animation-folder/obj_bullet_destroy/" />
-        <folder expanded="1" path="animation-folder/obj_icons/" />
         <folder expanded="1" path="animation-folder/obj_mouse_light/" />
         <folder expanded="1" path="animation-folder/obj_mouse_light_out/" />
-        <folder expanded="1" path="animation-folder/obj_rocket/" />
         <folder expanded="1" path="animation-folder/obj_explosion/" />
-        <folder expanded="1" path="animation-folder/obj_enemy/" />
-        <folder expanded="1" path="animation-folder/obj_half_platform/" />
-        <folder expanded="1" path="animation-folder/obj_los/" />
-        <folder expanded="1" path="animation-folder/obj_background_1/" />
-        <folder expanded="1" path="animation-folder/obj_background_3/" />
-        <folder expanded="1" path="animation-folder/obj_background_2/" />
-        <folder expanded="1" path="animation-folder/obj_bat/" />
+        <folder expanded="1" path="animation-folder/obj_muzzleflash/" />
+        <folder expanded="1" path="animation-folder/obj_rocket/" />
         <folder expanded="1" path="animation-folder/obj_shield/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/obj_player_los/" />
+        <folder expanded="1" path="animation-folder/obj_player/" />
+        <folder expanded="1" path="animation-folder/obj_player_health/" />
+        <folder expanded="1" path="animation-folder/obj_enemy/" />
+        <folder expanded="1" path="animation-folder/obj_mech/" />
+        <folder expanded="1" path="animation-folder/obj_bat/" />
+        <folder expanded="1" path="animation-folder/obj_table/" />
+        <folder expanded="1" path="animation-folder/obj_logo/" />
+        <folder expanded="1" path="animation-folder/obj_button/" />
+        <folder expanded="1" path="animation-folder/obj_crosshair/" />
+        <folder expanded="1" path="animation-folder/obj_icon_button/" />
+        <folder expanded="1" path="animation-folder/obj_icons/" />
+        <folder expanded="1" path="animation-folder/obj_menu_window/" />
+        <folder expanded="1" path="animation-folder/obj_background_1/" />
+        <folder expanded="1" path="animation-folder/obj_background_2/" />
+        <folder expanded="1" path="animation-folder/obj_background_3/" />
+        <folder expanded="1" path="animation-folder/obj_half_platform/" />
+        <folder expanded="1" path="animation-folder/obj_lever/" />
     </folders-expanded>
 </c2uistate>

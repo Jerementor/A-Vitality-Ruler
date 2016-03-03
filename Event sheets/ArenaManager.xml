@@ -3,14 +3,18 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>ArenaManager</name>
     <events>
-        <include>EnemyManager</include>
-        <include>GeneratorManager</include>
-        <include>PlayerManager</include>
-        <include>WeaponManager</include>
-        <include>SoundManager</include>
-        <include>MusicManager</include>
-        <include>GlobalsManager</include>
-        <include>DebugManager</include>
+        <event-group description="" sid="5906328771959042" title="Includes">
+            <sub-events>
+                <include>EnemyManager</include>
+                <include>GeneratorManager</include>
+                <include>PlayerManager</include>
+                <include>WeaponManager</include>
+                <include>SoundManager</include>
+                <include>MusicManager</include>
+                <include>GlobalsManager</include>
+                <include>DebugManager</include>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="8415549344623403" title="Game Start">
             <sub-events>
                 <event-block sid="4616213272907927">
@@ -51,34 +55,34 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="3332982557331486">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7649423054103617" type="obj_gun">
+                            <param id="0" name="Instance variable">gun_id</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="8529167605532249" type="System">
+                            <param id="0" name="Layer">&quot;HUD&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1938981218303562">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5376123722373921" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="381316562779641" type="System">
+                            <param id="0" name="Layer">&quot;HUD&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="3332982557331486">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="7649423054103617" type="obj_gun">
-                    <param id="0" name="Instance variable">gun_id</param>
-                    <param id="1" name="Comparison">1</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-4" name="Set layer visible" sid="8529167605532249" type="System">
-                    <param id="0" name="Layer">&quot;HUD&quot;</param>
-                    <param id="1" name="Visibility">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="1938981218303562">
-            <conditions>
-                <condition id="-22" name="Else" sid="5376123722373921" type="System" />
-            </conditions>
-            <actions>
-                <action id="-4" name="Set layer visible" sid="381316562779641" type="System">
-                    <param id="0" name="Layer">&quot;HUD&quot;</param>
-                    <param id="1" name="Visibility">0</param>
-                </action>
-            </actions>
-        </event-block>
         <event-group description="" sid="3105670728765321" title="Rooms">
             <sub-events>
                 <event-block sid="1454291404059574">
@@ -117,22 +121,6 @@
                             <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="2437916653524349">
-                            <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="6425633155393072" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="33" name="Stop all" sid="6101514191327605" type="Audio" />
-                                <action id="0" name="Play" sid="8216223101472575" type="Audio">
-                                    <param id="0" name="Audio file">SimOFF_TestTrack</param>
-                                    <param id="2" name="Loop">1</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="1451803338978818">
                     <conditions>
@@ -174,22 +162,6 @@
                             <param id="1" name="Y">obj_player.Y</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="3840641622859765">
-                            <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="4468504685022321" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="33" name="Stop all" sid="1744633470502674" type="Audio" />
-                                <action id="0" name="Play" sid="1946057062514685" type="Audio">
-                                    <param id="0" name="Audio file">SimON_TestTrack</param>
-                                    <param id="2" name="Loop">1</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -223,8 +195,8 @@
                                     <param id="0" name="Layer">&quot;Lights&quot;</param>
                                     <param id="1" name="Visibility">1</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="900023600386866" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">round_start</param>
+                                <action id="-13" name="Set boolean" sid="900023600386866" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_round_start</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="7011934977936127" type="obj_lever">
@@ -249,12 +221,12 @@
                             <param id="0" name="Group name">&quot;Arena Countdown&quot;</param>
                             <param id="1" name="State">0</param>
                         </action>
-                        <action id="-13" name="Set boolean" sid="2475596861258643" type="obj_global_manager">
-                            <param id="0" name="Instance variable">round_start</param>
+                        <action id="-13" name="Set boolean" sid="2475596861258643" type="obj_global">
+                            <param id="0" name="Instance variable">inst_round_start</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-13" name="Set boolean" sid="7892462868912224" type="obj_global_manager">
-                            <param id="0" name="Instance variable">upgrades</param>
+                        <action id="-13" name="Set boolean" sid="7892462868912224" type="obj_global">
+                            <param id="0" name="Instance variable">inst_upgrades</param>
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>
@@ -282,8 +254,8 @@
                 </event-block>
                 <event-block sid="5106206770562153">
                     <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="9269954709762184" type="obj_global_manager">
-                            <param id="0" name="Instance variable">round_start</param>
+                        <condition id="-8" name="Is boolean instance variable set" sid="9269954709762184" type="obj_global">
+                            <param id="0" name="Instance variable">inst_round_start</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -291,8 +263,12 @@
                             <param id="0" name="Group name">&quot;Pull Lever&quot;</param>
                             <param id="1" name="State">0</param>
                         </action>
-                        <action id="-9" name="Set value" sid="7123884441271049" type="System">
+                        <action id="-9" name="Set value" sid="7571829887208697" type="System">
                             <param id="0" name="Variable">room</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9450070932100243" type="obj_global">
+                            <param id="0" name="Instance variable">inst_room</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
@@ -314,8 +290,8 @@
                                 </event-block>
                                 <event-block sid="621836051343349">
                                     <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="2808942029645239" type="obj_global_manager">
-                                            <param id="0" name="Instance variable">enemy_spawn</param>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="2808942029645239" type="obj_global">
+                                            <param id="0" name="Instance variable">inst_enemy_spawn</param>
                                         </condition>
                                     </conditions>
                                     <actions />
@@ -338,8 +314,8 @@
                                         <condition id="-22" name="Else" sid="6916720636386075" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-13" name="Set boolean" sid="4379157757713455" type="obj_global_manager">
-                                            <param id="0" name="Instance variable">enemy_spawn</param>
+                                        <action id="-13" name="Set boolean" sid="4379157757713455" type="obj_global">
+                                            <param id="0" name="Instance variable">inst_enemy_spawn</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
@@ -383,6 +359,10 @@
                         </action>
                         <action id="-9" name="Set value" sid="6566310917174685" type="System">
                             <param id="0" name="Variable">room</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3925111763783598" type="obj_global">
+                            <param id="0" name="Instance variable">inst_room</param>
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>

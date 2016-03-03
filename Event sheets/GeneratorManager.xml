@@ -10,8 +10,8 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">1</param>
                 </condition>
-                <condition id="-8" name="Is boolean instance variable set" sid="3059919469852529" type="obj_global_manager">
-                    <param id="0" name="Instance variable">round_start</param>
+                <condition id="-8" name="Is boolean instance variable set" sid="3059919469852529" type="obj_global">
+                    <param id="0" name="Instance variable">inst_round_start</param>
                 </condition>
             </conditions>
             <actions>

@@ -547,8 +547,8 @@
             <sub-events>
                 <event-block sid="6570027829405921">
                     <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="7056651488464675" type="obj_global_manager">
-                            <param id="0" name="Instance variable">upgrades</param>
+                        <condition id="-8" name="Is boolean instance variable set" sid="7056651488464675" type="obj_global">
+                            <param id="0" name="Instance variable">inst_upgrades</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -676,8 +676,8 @@
                                     <param id="0" name="Instance variable">gun_id</param>
                                     <param id="1" name="Value">obj_gun_upgrades.gun_id</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="4629181211709257" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">upgrades</param>
+                                <action id="-13" name="Set boolean" sid="4629181211709257" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_upgrades</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>

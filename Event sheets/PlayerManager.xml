@@ -692,8 +692,8 @@
                     <sub-events>
                         <event-block sid="4575742067373654">
                             <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="317334630501197" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">grav</param>
+                                <condition id="-8" name="Is boolean instance variable set" sid="317334630501197" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_grav</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -716,8 +716,8 @@
                                 <action id="-8" name="Set angle" sid="7606730190500946" type="obj_player">
                                     <param id="0" name="Angle">180</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="6231241003899771" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">grav</param>
+                                <action id="-13" name="Set boolean" sid="6231241003899771" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_grav</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
@@ -730,8 +730,8 @@
                                 <action id="-8" name="Set angle" sid="4546261677889513" type="obj_player">
                                     <param id="0" name="Angle">0</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="2003187535259371" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">grav</param>
+                                <action id="-13" name="Set boolean" sid="2003187535259371" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_grav</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>

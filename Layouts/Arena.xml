@@ -261,20 +261,21 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="obj_global_manager" uid="70">
+                <instance type="obj_global" uid="70">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
                     </properties>
                     <instance-variables>
-                        <mute_music>false</mute_music>
-                        <mute_sfx>false</mute_sfx>
-                        <fullscreen>false</fullscreen>
-                        <round_start>false</round_start>
-                        <upgrades>false</upgrades>
-                        <paused>false</paused>
-                        <grav>false</grav>
-                        <enemy_spawn>false</enemy_spawn>
+                        <inst_mute_music>false</inst_mute_music>
+                        <inst_mute_sfx>false</inst_mute_sfx>
+                        <inst_paused>false</inst_paused>
+                        <inst_fullscreen>false</inst_fullscreen>
+                        <inst_round_start>false</inst_round_start>
+                        <inst_upgrades>false</inst_upgrades>
+                        <inst_grav>false</inst_grav>
+                        <inst_enemy_spawn>false</inst_enemy_spawn>
+                        <inst_room>0</inst_room>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -282,8 +283,8 @@
                         <x>10</x>
                         <y>-20</y>
                         <z>0</z>
-                        <width>10</width>
-                        <height>17</height>
+                        <width>16</width>
+                        <height>16</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -1106,7 +1107,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="obj_los" uid="37">
+                <instance type="obj_player_los" uid="37">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -1489,10 +1490,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>150</x>
+                        <x>160</x>
                         <y>90</y>
                         <z>0</z>
-                        <width>160</width>
+                        <width>200</width>
                         <height>110</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -1514,7 +1515,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>110</x>
+                        <x>100</x>
                         <y>70</y>
                         <z>0</z>
                         <width>32</width>
@@ -1539,7 +1540,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>150</x>
+                        <x>160</x>
                         <y>70</y>
                         <z>0</z>
                         <width>32</width>
@@ -1564,7 +1565,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>110</x>
+                        <x>100</x>
                         <y>110</y>
                         <z>0</z>
                         <width>32</width>
@@ -1589,7 +1590,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>150</x>
+                        <x>160</x>
                         <y>110</y>
                         <z>0</z>
                         <width>32</width>
@@ -1614,7 +1615,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>190</x>
+                        <x>220</x>
                         <y>70</y>
                         <z>0</z>
                         <width>32</width>
@@ -1639,7 +1640,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>190</x>
+                        <x>220</x>
                         <y>110</y>
                         <z>0</z>
                         <width>32</width>
@@ -1661,7 +1662,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>110</x>
+                        <x>100</x>
                         <y>70</y>
                         <z>0</z>
                         <width>14</width>
@@ -1683,7 +1684,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>110</x>
+                        <x>100</x>
                         <y>110</y>
                         <z>0</z>
                         <width>22</width>
@@ -1705,7 +1706,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>150</x>
+                        <x>160</x>
                         <y>110</y>
                         <z>0</z>
                         <width>22</width>
@@ -1727,7 +1728,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>150</x>
+                        <x>160</x>
                         <y>70</y>
                         <z>0</z>
                         <width>17</width>
@@ -1749,7 +1750,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>190</x>
+                        <x>220</x>
                         <y>70</y>
                         <z>0</z>
                         <width>20</width>
@@ -1771,7 +1772,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>190</x>
+                        <x>220</x>
                         <y>110</y>
                         <z>0</z>
                         <width>14</width>
@@ -1801,10 +1802,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>100</x>
+                        <x>110</x>
                         <y>10</y>
                         <z>0</z>
-                        <width>250</width>
+                        <width>120</width>
                         <height>50</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>

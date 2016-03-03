@@ -43,8 +43,8 @@
             <sub-events>
                 <event-block sid="6954614052657767">
                     <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="8502494686037168" type="obj_global_manager">
-                            <param id="0" name="Instance variable">paused</param>
+                        <condition id="-8" name="Is boolean instance variable set" sid="8502494686037168" type="obj_global">
+                            <param id="0" name="Instance variable">inst_paused</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -56,8 +56,8 @@
                             <param id="0" name="Layer">&quot;Options&quot;</param>
                             <param id="1" name="Visibility">0</param>
                         </action>
-                        <action id="-13" name="Set boolean" sid="1271114143573443" type="obj_global_manager">
-                            <param id="0" name="Instance variable">paused</param>
+                        <action id="-13" name="Set boolean" sid="1271114143573443" type="obj_global">
+                            <param id="0" name="Instance variable">inst_paused</param>
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>
@@ -75,8 +75,8 @@
                             <param id="0" name="Layer">&quot;Options&quot;</param>
                             <param id="1" name="Visibility">1</param>
                         </action>
-                        <action id="-13" name="Set boolean" sid="7573321189538399" type="obj_global_manager">
-                            <param id="0" name="Instance variable">paused</param>
+                        <action id="-13" name="Set boolean" sid="7573321189538399" type="obj_global">
+                            <param id="0" name="Instance variable">inst_paused</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
@@ -143,12 +143,12 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-13" name="Set boolean" sid="8087817879379735" type="obj_global_manager">
-                    <param id="0" name="Instance variable">upgrades</param>
+                <action id="-13" name="Set boolean" sid="8087817879379735" type="obj_global">
+                    <param id="0" name="Instance variable">inst_upgrades</param>
                     <param id="1" name="Value">0</param>
                 </action>
-                <action id="-13" name="Set boolean" sid="4642205242676006" type="obj_global_manager">
-                    <param id="0" name="Instance variable">round_start</param>
+                <action id="-13" name="Set boolean" sid="4642205242676006" type="obj_global">
+                    <param id="0" name="Instance variable">inst_round_start</param>
                     <param id="1" name="Value">0</param>
                 </action>
                 <action id="0" name="Call function" sid="2795667768795635" type="Function">

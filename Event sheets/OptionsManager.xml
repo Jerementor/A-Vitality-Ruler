@@ -74,13 +74,13 @@
                     <sub-events>
                         <event-block sid="996995354151554">
                             <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="7767426518106672" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">mute_sfx</param>
+                                <condition id="-8" name="Is boolean instance variable set" sid="7767426518106672" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_mute_music</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="9814534528782893" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">mute_music</param>
+                                <action id="-13" name="Set boolean" sid="9814534528782893" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_mute_music</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
@@ -90,8 +90,8 @@
                                 <condition id="-22" name="Else" sid="7070273667893832" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="5366761013796637" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">mute_music</param>
+                                <action id="-13" name="Set boolean" sid="5366761013796637" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_mute_music</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
@@ -111,13 +111,13 @@
                     <sub-events>
                         <event-block sid="808978313609424">
                             <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="1944897997847475" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">mute_sfx</param>
+                                <condition id="-8" name="Is boolean instance variable set" sid="1944897997847475" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_mute_sfx</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="7142138174748228" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">mute_sfx</param>
+                                <action id="-13" name="Set boolean" sid="7142138174748228" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_mute_sfx</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
@@ -127,8 +127,8 @@
                                 <condition id="-22" name="Else" sid="1048977412491463" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="1304420214144456" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">mute_sfx</param>
+                                <action id="-13" name="Set boolean" sid="1304420214144456" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_mute_sfx</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
@@ -148,14 +148,14 @@
                     <sub-events>
                         <event-block sid="7912154473547549">
                             <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="2740587793428102" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">fullscreen</param>
+                                <condition id="-8" name="Is boolean instance variable set" sid="2740587793428102" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_fullscreen</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="11" name="Cancel fullscreen" sid="9879675133350066" type="Browser" />
-                                <action id="-13" name="Set boolean" sid="2042416773675149" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">fullscreen</param>
+                                <action id="-13" name="Set boolean" sid="2042416773675149" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_fullscreen</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
@@ -168,8 +168,8 @@
                                 <action id="10" name="Request fullscreen" sid="1607752145341223" type="Browser">
                                     <param id="0" name="Mode">5</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="8977014261192265" type="obj_global_manager">
-                                    <param id="0" name="Instance variable">fullscreen</param>
+                                <action id="-13" name="Set boolean" sid="8977014261192265" type="obj_global">
+                                    <param id="0" name="Instance variable">inst_fullscreen</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>

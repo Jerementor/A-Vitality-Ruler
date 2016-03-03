@@ -2,5 +2,95 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>SoundManager</name>
-    <events />
+    <events>
+        <event-block sid="6416874840170439">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2816923255317716" type="obj_global">
+                    <param id="0" name="Instance variable">inst_mute_music</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Set muted" sid="1061549920228227" type="Audio">
+                    <param id="0" name="Tag">&quot;game-music&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>Find out what room we are in.</comment>
+                <event-block sid="8394148134925077">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7642223577494784" type="obj_global">
+                            <param id="0" name="Instance variable">inst_room</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>[inst_room] = 0 so we are in the &apos;Menu&apos; Layout. Stop all sounds (just in-case) and play the MenuLoop</comment>
+                        <event-block sid="3777161168791364">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="3308712744731415" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="9903993910224387" type="Audio" />
+                                <action id="0" name="Play" sid="750590888414549" type="Audio">
+                                    <param id="0" name="Audio file">MenuLoop</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;game-music&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3283947340165451">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7118795521382367" type="obj_global">
+                            <param id="0" name="Instance variable">inst_room</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>[inst_room] = 1 so we are in the &apos;Game&apos; layout. Stop all sounds (just in-case) and play the GameLoop</comment>
+                        <event-block sid="1765253065577929">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="8590574214482322" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="2363517324947232" type="Audio" />
+                                <action id="0" name="Play" sid="5217191231649636" type="Audio">
+                                    <param id="0" name="Audio file">GameLoop</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;game-music&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8744871830265222">
+            <conditions>
+                <condition id="-22" name="Else" sid="2703194647645713" type="System" />
+            </conditions>
+            <actions>
+                <action id="2" name="Set muted" sid="4182835156166027" type="Audio">
+                    <param id="0" name="Tag">&quot;game-music&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3623798413600841">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7929136290015428" type="obj_global">
+                    <param id="0" name="Instance variable">inst_mute_sfx</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
 </c2eventsheet>

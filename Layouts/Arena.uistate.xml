@@ -4,11 +4,11 @@
 It is entirely optional and the project will load without it.  If you are placing the project under source control,
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
-        <position-x>395.182</position-x>
-        <position-y>208.529</position-y>
-        <position-z>68.0375</position-z>
-        <lookat-x>395.182</lookat-x>
-        <lookat-y>208.529</lookat-y>
+        <position-x>215.148</position-x>
+        <position-y>110.317</position-y>
+        <position-z>40.8452</position-z>
+        <lookat-x>215.148</lookat-x>
+        <lookat-y>110.317</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>1</snap-to-grid>
@@ -27,7 +27,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <layers>
         <layer locked="1" name="Background" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="LowerBackground" parallax-in-editor="0" visible="0" />
-        <layer locked="0" name="Menu" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Menu" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="HalfPlatforms" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Tilemap" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Upgrades" parallax-in-editor="0" visible="1" />
@@ -35,6 +35,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layer locked="1" name="Player" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Lights" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="HUD" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Options" parallax-in-editor="0" visible="0" />
+        <layer locked="0" name="Options" parallax-in-editor="0" visible="1" />
     </layers>
 </c2uistate>
