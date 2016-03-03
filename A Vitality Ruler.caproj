@@ -674,32 +674,10 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="obj_button" sid="3325169832258051">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="menu_id" sid="5406100830363595" type="number" />
-                </instance-variables>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1269199526201946" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_levelselect.png">
-                            <collision-poly>
-                                <point x="0.02" y="0.136364" />
-                                <point x="0.5" y="0.0454545" />
-                                <point x="0.98" y="0.136364" />
-                                <point x="0.98" y="0.5" />
-                                <point x="0.96" y="0.818182" />
-                                <point x="0.04" y="0.818182" />
-                                <point x="0.02" y="0.5" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
             <object-type name="obj_crosshair" sid="1600826493060097">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7865878380486858" speed="0">
-                        <frame duration="1" hotspotX="0.571429" hotspotY="0.619048" />
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7865878380486858" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\c_round.png" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\c_curvedot.png" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\c_rounddot.png" />
@@ -780,13 +758,68 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="TiledBackground2" sid="140585374252899">
-                <plugin id="TiledBg" />
-                <texture />
+            <object-type name="obj_facebook" sid="6452368177118502">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2126620224386066" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\s_facebook.png" />
+                    </animation>
+                </animation-folder>
             </object-type>
-            <object-type name="TiledBackground" sid="6463450803647135">
-                <plugin id="TiledBg" />
-                <texture original-source="C:\Users\JeremyA\Desktop\Jerementor_Logo.png" />
+            <object-type name="obj_github" sid="5756295890856893">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3448656851485034" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\GitHub-Mark-32px.png">
+                            <collision-poly>
+                                <point x="0.15625" y="0.15625" />
+                                <point x="0.5" y="0" />
+                                <point x="0.84375" y="0.15625" />
+                                <point x="1" y="0.5" />
+                                <point x="0.84375" y="0.84375" />
+                                <point x="0.5" y="0.25" />
+                                <point x="0.15625" y="0.84375" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_googleplus" sid="6640771812202873">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3855182540912274" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\s_google.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_menu_box" sid="2117624951262566">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="menu_id" sid="209075232343721" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6016737479540334" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_levelselect.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_twitter" sid="9008145167062351">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3783505937531145" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\GitHub-Mark-32px.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_window" sid="8225877607579472">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6995741282672675" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JeremyA\Desktop\Menu Assets\m_tooltip.png" />
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
         <object-folder name="Arena">
@@ -976,6 +1009,10 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-type name="SpriteFont2" sid="8143584102969971">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
     </object-folder>
     <families>
         <family name="Bullets" plugin-id="Sprite" sid="903008124839376">
@@ -997,10 +1034,23 @@
                 <member>obj_mech</member>
             </members>
         </family>
+        <family name="Social" plugin-id="Sprite" sid="8101181229362313">
+            <members>
+                <member>obj_facebook</member>
+                <member>obj_github</member>
+                <member>obj_googleplus</member>
+                <member>obj_twitter</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Sine" sid="5353222766062629">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+        </family>
     </families>
     <layout-folder>
         <layout>Arena.xml</layout>
-        <layout>Intro.xml</layout>
+        <layout>Menu.xml</layout>
     </layout-folder>
     <event-folder>
         <event-folder name="Game">
@@ -1019,7 +1069,6 @@
             <event-sheet>GeneratorManager.xml</event-sheet>
             <event-sheet>EnemyManager.xml</event-sheet>
         </event-folder>
-        <event-sheet>IntroManager.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />

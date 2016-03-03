@@ -220,7 +220,7 @@
                                                     <param id="0" name="Audio file">sndRevolver</param>
                                                     <param id="2" name="Loop">0</param>
                                                     <param id="3" name="Volume">0</param>
-                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                    <param id="1" name="Tag (optional)">&quot;game-sfx&quot;</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -264,7 +264,7 @@
                                                     <param id="0" name="Audio file">sndShotgun</param>
                                                     <param id="2" name="Loop">0</param>
                                                     <param id="3" name="Volume">0</param>
-                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                    <param id="1" name="Tag (optional)">&quot;game-sfx&quot;</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -404,7 +404,7 @@
                                                             <param id="0" name="Audio file">sndRevolver</param>
                                                             <param id="2" name="Loop">0</param>
                                                             <param id="3" name="Volume">0</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                            <param id="1" name="Tag (optional)">&quot;game-sfx&quot;</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -463,7 +463,7 @@
                                                             <param id="0" name="Audio file">sndShotgun</param>
                                                             <param id="2" name="Loop">0</param>
                                                             <param id="3" name="Volume">0</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                            <param id="1" name="Tag (optional)">&quot;game-sfx&quot;</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -654,6 +654,19 @@
         </event-group>
         <event-group description="" sid="4542800146599307" title="Gun Upgrades">
             <sub-events>
+                <event-block sid="844232942171539">
+                    <conditions>
+                        <condition id="0" name="On function" sid="1531078938673402" type="Function">
+                            <param id="0" name="Name">&quot;randomize_wep_func&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="7169361112887064" type="obj_gun_upgrades">
+                            <param id="0" name="Instance variable">gun_id</param>
+                            <param id="1" name="Value">choose(1,2,3,4,5)</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block any="1" sid="182342045029024">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="9680617978978746" type="Keyboard">
@@ -743,65 +756,56 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="844232942171539">
-            <conditions>
-                <condition id="0" name="On function" sid="1531078938673402" type="Function">
-                    <param id="0" name="Name">&quot;randomize_wep_func&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="7169361112887064" type="obj_gun_upgrades">
-                    <param id="0" name="Instance variable">gun_id</param>
-                    <param id="1" name="Value">choose(1,2,3,4,5)</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="5549192817178771">
-            <conditions>
-                <condition id="2" name="Mouse button is down" sid="1672342274770609" type="Mouse">
-                    <param id="0" name="Mouse button">2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-13" name="Set boolean" sid="16991429524215" type="obj_player">
-                    <param id="0" name="Instance variable">player_shield</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="2418645493609631">
-            <conditions>
-                <condition id="-22" name="Else" sid="1113578636622637" type="System" />
-            </conditions>
-            <actions>
-                <action id="-13" name="Set boolean" sid="6447888504822815" type="obj_player">
-                    <param id="0" name="Instance variable">player_shield</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="8225175771669877">
-            <conditions>
-                <condition id="-8" name="Is boolean instance variable set" sid="1371949943521807" type="obj_player">
-                    <param id="0" name="Instance variable">player_shield</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="3775891106319476" type="System">
-                    <param id="0" name="Object to create">obj_shield</param>
-                    <param id="1" name="Layer">&quot;Player&quot;</param>
-                    <param id="2" name="X">obj_player.ImagePointX(&quot;Shield&quot;)</param>
-                    <param id="3" name="Y">obj_player.ImagePointY(&quot;Shield&quot;)</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="6859061696163467">
-            <conditions>
-                <condition id="-22" name="Else" sid="2786641995675689" type="System" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="1937493119457912" type="obj_shield" />
-            </actions>
-        </event-block>
+        <event-group description="" sid="2500948183291155" title="Shield Tests">
+            <sub-events>
+                <event-block sid="5549192817178771">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="1672342274770609" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="16991429524215" type="obj_player">
+                            <param id="0" name="Instance variable">player_shield</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2418645493609631">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="1113578636622637" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="6447888504822815" type="obj_player">
+                            <param id="0" name="Instance variable">player_shield</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8225175771669877">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="1371949943521807" type="obj_player">
+                            <param id="0" name="Instance variable">player_shield</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3775891106319476" type="System">
+                            <param id="0" name="Object to create">obj_shield</param>
+                            <param id="1" name="Layer">&quot;Player&quot;</param>
+                            <param id="2" name="X">obj_player.ImagePointX(&quot;Shield&quot;)</param>
+                            <param id="3" name="Y">obj_player.ImagePointY(&quot;Shield&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6859061696163467">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="2786641995675689" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1937493119457912" type="obj_shield" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

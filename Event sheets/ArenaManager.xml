@@ -22,6 +22,10 @@
                         <condition id="-2" name="On start of layout" sid="9066932390452245" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-28" name="Set canvas size" sid="4021147768295096" type="System">
+                            <param id="0" name="Width">320</param>
+                            <param id="1" name="Height">180</param>
+                        </action>
                         <action id="-9" name="Set value" sid="3936890979405354" type="System">
                             <param id="0" name="Variable">room</param>
                             <param id="1" name="Value">0</param>
@@ -464,5 +468,41 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <comment>Random gen ideas..</comment>
+        <event-block sid="4397905691978114">
+            <conditions />
+            <actions>
+                <action disabled="1" id="5" name="Set frame" sid="527977666838336" type="obj_plight">
+                    <param id="0" name="Frame number">choose(0,0,0,1,1,1,1,0,0,0,0,1)</param>
+                </action>
+                <action disabled="1" id="-16" name="Set opacity" sid="1687858032166244" type="obj_plight">
+                    <param id="0" name="Opacity">choose(50,50,50,50,100,75,75,75,75,25)</param>
+                </action>
+                <action disabled="1" id="-7" name="Set size" sid="8843324991012792" type="obj_plight">
+                    <param id="0" name="Width">choose(50,50,50,50,100,75,75,75,75,25)</param>
+                    <param id="1" name="Height">choose(50,50,50,50,100,75,75,75,75,25)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="7036081113739931">
+                    <conditions />
+                    <actions>
+                        <action disabled="1" id="-3" name="Set position" sid="3981103741108421" type="obj_player_los">
+                            <param id="0" name="X">obj_gun.ImagePointX(&quot;Bullet&quot;)</param>
+                            <param id="1" name="Y">obj_gun.ImagePointY(&quot;Bullet&quot;)</param>
+                        </action>
+                        <action disabled="1" id="-8" name="Set angle" sid="1075564421886493" type="obj_player_los">
+                            <param id="0" name="Angle">angle(obj_gun.X, obj_gun.Y, Mouse.X(0), Mouse.Y(0))</param>
+                        </action>
+                        <action disabled="1" id="-5" name="Set width" sid="8511861221214809" type="obj_player_los">
+                            <param id="0" name="Width">Mouse.Y</param>
+                        </action>
+                        <action disabled="1" id="-6" name="Set height" sid="2618928971760394" type="obj_player_los">
+                            <param id="0" name="Height">Mouse.Y / Mouse.X</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

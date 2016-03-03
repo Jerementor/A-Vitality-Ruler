@@ -90,7 +90,23 @@
                     <param id="0" name="Instance variable">inst_mute_sfx</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="2" name="Set muted" sid="8271367845653413" type="Audio">
+                    <param id="0" name="Tag">&quot;game-sfx&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7700323227556295">
+            <conditions>
+                <condition id="-22" name="Else" sid="6123028484915415" type="System" />
+            </conditions>
+            <actions>
+                <action id="2" name="Set muted" sid="4039321099726416" type="Audio">
+                    <param id="0" name="Tag">&quot;game-sfx&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

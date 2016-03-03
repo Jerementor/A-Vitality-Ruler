@@ -3,40 +3,167 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>MenuManager</name>
     <events>
-        <event-block sid="1297025903055164">
-            <conditions />
+        <comment>Electric healthbar</comment>
+        <comment>Choice ending. Do you become the VR or Not?</comment>
+        <comment>A vitality ruler</comment>
+        <variable constant="0" name="intro" sid="4156575888564406" static="0" type="number">0</variable>
+        <event-group description="" sid="395004235748451" title="Logo Cutscene">
+            <sub-events>
+                <event-block sid="3540416512205616">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="9195151602937066" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3867004538713972">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2115945409032531" type="System">
+                                    <param id="0" name="Variable">intro</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="6903138595668017" type="obj_intro">
+                                    <param id="0" name="Text">&quot;Jerementor Presents...&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5428507368741654">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6772855429706763" type="System">
+                                    <param id="0" name="Variable">intro</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="6843512682579964" type="obj_intro">
+                                    <param id="0" name="Text">&quot;Sponsored by If Else Learn&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4158792883475449">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5323275241904093" type="System">
+                                    <param id="0" name="Variable">intro</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="7041603925917748" type="obj_intro">
+                                    <param id="0" name="Text">&quot;A Vitality Ruler&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7507835391311909">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8902968912484661" type="System">
+                                    <param id="0" name="Variable">intro</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="8327905806570425" type="obj_intro">
+                                    <param id="0" name="Text">&quot;Virtual Reality&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8635168917031516">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9884406208059407" type="System">
+                                    <param id="0" name="Variable">intro</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="8112374083367722" type="System">
+                                    <param id="0" name="Layer">&quot;Intro&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-28" name="Set canvas size" sid="7427169051364202" type="System">
+                                    <param id="0" name="Width">640</param>
+                                    <param id="1" name="Height">360</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="4820444059137402">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade-out finished" sid="8435062415785192" type="obj_intro" />
+            </conditions>
             <actions>
-                <action disabled="1" id="5" name="Set frame" sid="9117853812582508" type="obj_plight">
-                    <param id="0" name="Frame number">choose(0,0,0,1,1,1,1,0,0,0,0,1)</param>
-                </action>
-                <action disabled="1" id="-16" name="Set opacity" sid="6143057417187099" type="obj_plight">
-                    <param id="0" name="Opacity">choose(50,50,50,50,100,75,75,75,75,25)</param>
-                </action>
-                <action disabled="1" id="-7" name="Set size" sid="8585773603112838" type="obj_plight">
-                    <param id="0" name="Width">choose(50,50,50,50,100,75,75,75,75,25)</param>
-                    <param id="1" name="Height">choose(50,50,50,50,100,75,75,75,75,25)</param>
+                <action behavior="Fade" id="0" name="Restart fade" sid="7675247673220749" type="obj_intro" />
+                <action id="-10" name="Add to" sid="5451787495180106" type="System">
+                    <param id="0" name="Variable">intro</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="5011310797690799">
+            <conditions>
+                <condition id="1" name="On any click" sid="3197015002930901" type="Mouse" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="2026761149967774" type="System">
+                    <param id="0" name="Variable">intro</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4898153017736164">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="9724650954319505" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">obj_menu_box</param>
+                </condition>
+            </conditions>
+            <actions />
             <sub-events>
-                <event-block sid="4286098356304926">
-                    <conditions />
+                <event-block sid="4207997966837938">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5933947858191897" type="obj_menu_box">
+                            <param id="0" name="Instance variable">menu_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
                     <actions>
-                        <action disabled="1" id="-3" name="Set position" sid="9007047781480635" type="obj_player_los">
-                            <param id="0" name="X">obj_gun.ImagePointX(&quot;Bullet&quot;)</param>
-                            <param id="1" name="Y">obj_gun.ImagePointY(&quot;Bullet&quot;)</param>
-                        </action>
-                        <action disabled="1" id="-8" name="Set angle" sid="1996939154362441" type="obj_player_los">
-                            <param id="0" name="Angle">angle(obj_gun.X, obj_gun.Y, Mouse.X(0), Mouse.Y(0))</param>
-                        </action>
-                        <action disabled="1" id="-5" name="Set width" sid="6124192858831328" type="obj_player_los">
-                            <param id="0" name="Width">Mouse.Y</param>
-                        </action>
-                        <action disabled="1" id="-6" name="Set height" sid="9773521348504985" type="obj_player_los">
-                            <param id="0" name="Height">Mouse.Y / Mouse.X</param>
+                        <action id="-2" name="Go to layout" sid="6802662023153987" type="System">
+                            <param id="0" name="Layout">Arena</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="1900964519751991">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="6404093035440648" type="Mouse">
+                    <param id="0" name="Object">obj_menu_box</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="1261009527352235" type="obj_menu_box">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7734463510217263">
+            <conditions>
+                <condition id="-22" name="Else" sid="6068099651455991" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="6696364312000293" type="obj_menu_box">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
